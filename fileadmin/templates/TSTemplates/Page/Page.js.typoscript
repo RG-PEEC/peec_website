@@ -1,0 +1,8 @@
+#javascript
+page.includeJSFooter {
+    10 = {$path.jsFolder}/jquery3.5.1.min.js
+    20 = {$path.jsFolder}/popper.min.js
+    30 = {$path.jsFolder}/bootstrap.min.js
+    38 = {$path.jsFolder}/lightbox.js
+    50 = {$path.jsFolder}/main.js
+}

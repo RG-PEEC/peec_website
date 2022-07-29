@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+<file source-language="en" datatype="plaintext" date="2013-09-08T21:34:32Z" product-name="myproduct">
+   <header/>
+   <body>
+       <trans-unit id="footer.contact">
+          <source>CONTACT</source>
+      </trans-unit>
+      <trans-unit id="footer.menu">
+          <source>MENU</source>
+      </trans-unit>
+      <trans-unit id="footer.thatspeec">
+          <source>This is PEEC</source>
+      </trans-unit>
+      <trans-unit id="footer.project">
+          <source>Projects</source>
+      </trans-unit>
+      <trans-unit id="footer.publications">
+          <source>Publications</source>
+      </trans-unit>
+      <trans-unit id="footer.partner">
+          <source>Partners</source>
+      </trans-unit>
+      <trans-unit id="footer.imprint">
+          <source>Imprint</source>
+      </trans-unit>
+      <trans-unit id="footer.privacy">
+          <source>Privacy</source>
+      </trans-unit>
+       <trans-unit id="footer.peec">
+           <source>Research Group PEEC</source>
+       </trans-unit>
+       <trans-unit id="footer.rights">
+           <source>All rights reserved.</source>
+       </trans-unit>
+   </body>
+</file>
+</xliff>

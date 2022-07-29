@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+
+
+
+
+
+<f:if condition="{data.tx_mask_linktopage}">
+
+    <f:link.typolink parameter='{data.tx_mask_linktopage}'>
+        <button type="button" class="btn btn-view-more" aria-label="Right Align">
+            <f:if condition="{data.tx_mask_viewmore}">
+                {data.tx_mask_viewmore}
+            </f:if>
+        </button>
+    </f:link.typolink>
+
+
+
+
+</f:if>
+

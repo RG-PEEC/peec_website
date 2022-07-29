@@ -1,0 +1,5 @@
+#Reihenfolge beachten - CSS/JS zeigt auf Page Objekt, muss daher zuerst Page angelegt werden muss
+@import 'fileadmin/templates/TSTemplates/Page/Page.config.typoscript'
+@import 'fileadmin/templates/TSTemplates/Page/Page.typoscript'
+@import 'fileadmin/templates/TSTemplates/Page/Page.css.typoscript'
+@import 'fileadmin/templates/TSTemplates/Page/Page.js.typoscript'

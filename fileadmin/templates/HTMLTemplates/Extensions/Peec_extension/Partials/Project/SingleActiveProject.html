@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:link.action action="show" arguments="{project:project}" pageUid="{settings.project}" class="project-item p-2 mb-5 col-lg-3 col-md-6 col-sm-12">
+    <div class="card h-100 border" style="border-color: {project.colorCode}!important;">
+        <div class="bubble-div d-flex justify-content-end">
+            <f:if condition="{project.category}">
+                <f:for each="{project.category}" as="category">
+                    <div class="support-bubble text-center border"
+                         style="border: 2px solid {project.colorCode}!important;">
+                        <p class="mt-2">{category.abbreviation}</p>
+                    </div>
+                </f:for>
+            </f:if>
+        </div>
+        <div class="card-body text-center d-flex align-items-center">
+            <p class="card-text">{project.title}</p>
+        </div>
+        <p class="text-right font-weight-bold mb-1 mr-1">
+            <f:format.date format="d-m-Y">{project.startdate}</f:format.date> 
+          	<f:if condition="{project.enddate}">	
+          		- <f:format.date format="d-m-Y">{project.enddate}</f:format.date>
+          </f:if>
+        </p>
+        <div class="project-image">
+            <div class="overlay">
+                <f:if condition="{project.teaserimage}">
+                    <f:then>
+                        <f:media class="card-img-bottom" file="{project.teaserimage}"/>
+                    </f:then>
+                    <f:else>
+                        <f:image class="card-img-bottom" src="fileadmin/templates/img/stockfoto.jpg"/>
+                    </f:else>
+                </f:if>
+            </div>
+
+            <f:if condition="{project.fundingpartner} || {project.researchpartner} || {project.companypartner}">
+                <div class="card-img-overlay d-flex flex-wrap align-content-end justify-content-center">
+                    <f:for each="{project.researchpartner}" as="researchpartner">
+                        <p class="badge badge-pill badge-light p-2 mx-1">{researchpartner.abbreviation}</p>
+                    </f:for>
+                    <f:for each="{project.companypartner}" as="companypartner">
+                        <p class="badge badge-pill badge-light p-2 mx-1">{companypartner.abbreviation}</p>
+                    </f:for>
+                    <f:for each="{project.fundingpartner}" as="fundingpartner">
+                        <p class="badge badge-pill badge-light p-2 mx-1">{fundingpartner.abbreviation}</p>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</f:link.action>

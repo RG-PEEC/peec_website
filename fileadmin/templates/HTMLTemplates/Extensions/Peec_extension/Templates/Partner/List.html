@@ -1,0 +1,120 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="content">
+    <section class="partner container">
+        <div class="row">
+
+            <f:if condition="{researchpartners}">
+                <f:if condition="{companypartners}">
+                    <f:then>
+                        <div class="col-lg-6 container">
+                    </f:then>
+                    <f:else>
+                        <div class="col-lg-12 container">
+                    </f:else>
+                </f:if>
+
+                <div class="row">
+                    <div class="col">
+                        <h2>
+                            <f:translate
+                                    key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:researchpartners"/>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <f:for each="{researchpartners}" as="partner">
+                        <div class="col-md-6 card-container  company-partner">
+                            <f:render section="card" arguments="{partner:partner}"/>
+                        </div>
+                    </f:for>
+                </div>
+        </div>
+        </f:if>
+
+        <f:if condition="{companypartners}">
+            <f:if condition="{researchpartners}">
+                <f:then>
+                    <div class="col-lg-6 container">
+                </f:then>
+                <f:else>
+                    <div class="col-lg-12 container">
+                </f:else>
+            </f:if>
+
+            <div class="row">
+                <div class="col">
+                    <h2>
+                        <f:translate
+                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:companypartners"/>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <f:for each="{companypartners}" as="partner">
+                    <div class="col-md-6 card-container research-partner">
+                        <f:render section="card" arguments="{partner:partner}"/>
+                    </div>
+                </f:for>
+            </div>
+            </div>
+        </f:if>
+
+        </div>
+    </section>
+</f:section>
+
+<f:section name="card">
+    <div class="card-flip">
+
+        <div class="card front partner-card">
+            <f:media class="card-img img-fluid" file="{partner.logo}"/>
+        </div>
+
+        <div class="card back partner-card-back d-flex justify-content-center align-content-center">
+            <div class="card-header container">
+                <div class="container">
+                    <div class="row">
+
+                        <f:if condition="{partner.website}">
+                            <f:then>
+                                <div class="row pb-4" style="max-width: 60%;margin:0 auto;">
+                                    <f:media class="card-img card-img-sm img-fluid" file="{partner.logo}"/>
+                                </div>
+                                <div class="row" style="margin:0 auto;">
+                                    <h5 class="text-center"><a href="{partner.website}" target="_blank"
+                                           class="card-title text-center">{partner.name}</a>
+                                    </h5>
+                                </div>
+
+                            </f:then>
+                            <f:else>
+                                <div class="row pb-4" style="max-width: 60%;margin:0 auto;">
+                                    <f:media class="card-img card-img-sm img-fluid" file="{partner.logo}"/>
+                                </div>
+                                <div class="row" style="margin:0 auto;">
+                                    <h5 class="text-center">{partner.name}</h5>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+
+            <f:if condition="{partner.participant}">
+                <div class="border-top">
+                    <div class="card-block container mt-3 ">
+                        <ul>
+                            <f:for each="{partner.participant}" as="participant">
+                                <li>{participant.firstname} {participant.lastname}</li>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</f:section>

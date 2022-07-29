@@ -1,0 +1,136 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<header class="big-banner d-flex justify-content-center flex-column"
+        style="background-image: linear-gradient(rgba(47, 48, 67, 0.5), rgba(47, 48, 67, 0.5)), url('fileadmin/templates/img/stockfoto.jpg')">
+    <div class="big-banner-text">
+        <h1>Publications</h1>
+    </div>
+</header>
+
+<!--Content-->
+<main class="flex-center container">
+    <section>
+        <div class="filter">
+            <div class="input-group">
+                <select class="custom-select" id="pub_filter_type">
+                    <option selected>Type</option>
+                    <option value="1">Article</option>
+                    <option value="2">Paper</option>
+                    <option value="3">Dissertation</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <select class="custom-select" id="pub_filter_author">
+                    <option selected>Author</option>
+                    <option value="1">Johannes Schönböck</option>
+                    <option value="2">Mirjam Aufgstein</option>
+                    <option value="3">Thomas Neumayr</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <select class="custom-select" id="pub_filter_from">
+                    <option selected>From</option>
+                    <option value="1">2012</option>
+                    <option value="2">2013</option>
+                    <option value="3">2014</option>
+                    <option value="4">2015</option>
+                    <option value="5">2016</option>
+                    <option value="6">2017</option>
+                    <option value="7">2018</option>
+                    <option value="8">2019</option>
+                    <option value="9">2020</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <select class="custom-select" id="pub_filter_to">
+                    <option selected>To</option>
+                    <option value="1">2012</option>
+                    <option value="2">2013</option>
+                    <option value="3">2014</option>
+                    <option value="4">2015</option>
+                    <option value="5">2016</option>
+                    <option value="6">2017</option>
+                    <option value="7">2018</option>
+                    <option value="8">2019</option>
+                    <option value="9">2020</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="list-group pub-container">
+            <div class="publication list-group-item list-group-item-action">
+                <div class="pub-type">
+                    <p>Article</p>
+                </div>
+                <p class="pub-content">
+                    <span class="pub-author">Schönböck, Augstein, Neumayr</span>
+                    <span class="pub-title">The great Publication - A new star is rising.</span>
+                    <span class="pub-description">Lorem ipsum - some description for this publication or whatever</span>
+                    <span class="pub-date">Oktober, 2017</span>
+                </p>
+                <div class="button-group">
+                    <div class="pub-reference">
+                        <button type="button" class="btn btn-pub-reference" aria-label="Right Align">
+                            <i class="fa fa-file-pdf"></i>Reference
+                        </button>
+                    </div>
+                    <div class="pub-bibtex">
+                        <button type="button" class="btn btn-pub-bibtex" aria-label="Right Align">
+                            <i class="fa fa-quote-left"></i>BibTex
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="publication list-group-item list-group-item-action">
+                <div class="pub-type">
+                    <p>Article</p>
+                </div>
+                <p class="pub-content">
+                    <span class="pub-author">Schönböck, Augstein, Neumayr</span>
+                    <span class="pub-title">The great Publication - A new star is rising.</span>
+                    <span class="pub-description">Lorem ipsum - some description for this publication or whatever</span>
+                    <span class="pub-date">Oktober, 2017</span>
+                </p>
+                <div class="button-group">
+                    <div class="pub-reference">
+                        <button type="button" class="btn btn-pub-reference" aria-label="Right Align">
+                            <i class="fa fa-file-pdf"></i>Reference
+                        </button>
+                    </div>
+                    <div class="pub-bibtex">
+                        <button type="button" class="btn btn-pub-bibtex" aria-label="Right Align">
+                            <i class="fa fa-quote-left"></i>BibTex
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="publication list-group-item list-group-item-action">
+                <div class="pub-type">
+                    <p>Article</p>
+                </div>
+                <p class="pub-content">
+                    <span class="pub-author">Schönböck, Augstein, Neumayr</span>
+                    <span class="pub-title">The great Publication - A new star is rising.</span>
+                    <span class="pub-description">Lorem ipsum - some description for this publication or whatever</span>
+                    <span class="pub-date">Oktober, 2017</span>
+                </p>
+                <div class="button-group">
+                    <div class="pub-reference">
+                        <button type="button" class="btn btn-pub-reference" aria-label="Right Align">
+                            <i class="fa fa-file-pdf"></i>Reference
+                        </button>
+                    </div>
+                    <div class="pub-bibtex">
+                        <button type="button" class="btn btn-pub-bibtex" aria-label="Right Align">
+                            <i class="fa fa-quote-left"></i>BibTex
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

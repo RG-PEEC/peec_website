@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:peec_extension/Resources/Private/Language/locallang_csh" date="2020-06-23T16:52:46Z" product-name="peec_extension">
+		<header/>
+		<body>
+			<trans-unit id="firstname.description" resname="firstname.description">
+				<source>firstname</source>
+			</trans-unit>
+			<trans-unit id="lastname.description" resname="lastname.description">
+				<source>lastname</source>
+			</trans-unit>
+			<trans-unit id="academictitle.description" resname="academictitle.description">
+				<source>academictitle</source>
+			</trans-unit>
+			<trans-unit id="postacademictitle.description" resname="postacademictitle.description">
+				<source>postacademictitle</source>
+			</trans-unit>
+			<trans-unit id="email.description" resname="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="phonenumber.description" resname="phonenumber.description">
+				<source>phonenumber</source>
+			</trans-unit>
+			<trans-unit id="picture.description" resname="picture.description">
+				<source>picture</source>
+			</trans-unit>
+			<trans-unit id="position.description" resname="position.description">
+				<source>position</source>
+			</trans-unit>
+			<trans-unit id="education.description" resname="education.description">
+				<source>education</source>
+			</trans-unit>
+			<trans-unit id="career.description" resname="career.description">
+				<source>career</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

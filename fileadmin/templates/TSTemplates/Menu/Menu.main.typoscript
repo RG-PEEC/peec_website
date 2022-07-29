@@ -1,0 +1,3 @@
+@import 'fileadmin/templates/TSTemplates/Menu/Menu.top.typoscript'
+@import 'fileadmin/templates/TSTemplates/Menu/Menu.breadcrumbs.typoscript'
+@import 'fileadmin/templates/TSTemplates/Menu/Menu.folder.typoscript'

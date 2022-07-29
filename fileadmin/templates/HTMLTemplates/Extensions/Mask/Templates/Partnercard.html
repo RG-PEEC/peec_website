@@ -1,0 +1,65 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{data.tx_mask_logo}">
+    <f:for each="{data.tx_mask_logo}" as="file">
+        <div class="col-md-6 card-container funding-partner">
+        <f:if condition="{file.hover}">
+            <f:then>
+                <div class="card flip">
+                    <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="card-img img-fluid" />
+                </div>
+                <div class="card back">
+                    <f:if condition="{data.tx_mask_partnername}">
+
+                        <div class="card-header">
+                            {data.tx_mask_partnername}</div>
+                    </f:if>
+                    <f:if condition="{data.tx_mask_peoplelist}">
+                        <div class="card-block">
+                            <ul><li><f:format.nl2br>{data.tx_mask_peoplelist}</f:format.nl2br></li></ul>
+                        </div>
+                    </f:if>
+                </div>
+            </f:then>
+            <f:else>
+                    <div class="card">
+                        <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="card-img img-fluid" />
+                    </div>
+            </f:else>
+        </f:if>
+        </div>
+    </f:for>
+</f:if>
+
+
+<!-- Vorderseite
+<f:if condition="{data.tx_mask_logo}">
+    <f:for each="{data.tx_mask_logo}" as="file">
+        <div class="col-md-6 card-container funding-partner">
+            <f:if condition="{file.hover}">
+                <f:then>
+
+                </f:then>
+                <f:else>
+                    <div class="card flip">
+                        <f:image image="{file}" alt="{file.alternative}" title="{file.title}" class="card-img img-fluid" />
+                    </div>
+                    <div class="card back">
+                        <f:if condition="{data.tx_mask_partnername}">
+
+                            <div class="card-header">
+                                {data.tx_mask_partnername}</div>
+                        </f:if>
+                        <f:if condition="{data.tx_mask_peoplelist}">
+                            <div class="card-block">
+                                <ul><li><f:format.nl2br>{data.tx_mask_peoplelist}</f:format.nl2br></li></ul>
+                            </div>
+                        </f:if>
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </f:for>
+</f:if>
+-->

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:peec_extension/Resources/Private/Language/locallang_csh" date="2020-06-23T20:20:38Z" product-name="peec_extension">
+		<header/>
+		<body>
+			<trans-unit id="title.description" resname="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="type.description" resname="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="pdf.description" resname="pdf.description">
+				<source>Upload your pdf of your publication.</source>
+			</trans-unit>
+			<trans-unit id="referencelink.description" resname="referencelink.description">
+				<source>referencelink</source>
+			</trans-unit>
+			<trans-unit id="doi.description" resname="doi.description">
+				<source>doi</source>
+			</trans-unit>
+			<trans-unit id="journal.description" resname="journal.description">
+				<source>journal</source>
+			</trans-unit>
+			<trans-unit id="year.description" resname="year.description">
+				<source>year</source>
+			</trans-unit>
+			<trans-unit id="volume.description" resname="volume.description">
+				<source>volume</source>
+			</trans-unit>
+			<trans-unit id="number.description" resname="number.description">
+				<source>number</source>
+			</trans-unit>
+			<trans-unit id="month.description" resname="month.description">
+				<source>month</source>
+			</trans-unit>
+			<trans-unit id="note.description" resname="note.description">
+				<source>note</source>
+			</trans-unit>
+			<trans-unit id="publisher.description" resname="publisher.description">
+				<source>publisher</source>
+			</trans-unit>
+			<trans-unit id="address.description" resname="address.description">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="edition.description" resname="edition.description">
+				<source>edition</source>
+			</trans-unit>
+			<trans-unit id="isbn.description" resname="isbn.description">
+				<source>isbn</source>
+			</trans-unit>
+			<trans-unit id="booktitle.description" resname="booktitle.description">
+				<source>booktitle</source>
+			</trans-unit>
+			<trans-unit id="organization.description" resname="organization.description">
+				<source>organization</source>
+			</trans-unit>
+			<trans-unit id="series.description" resname="series.description">
+				<source>series</source>
+			</trans-unit>
+			<trans-unit id="chapter.description" resname="chapter.description">
+				<source>chapter</source>
+			</trans-unit>
+			<trans-unit id="school.description" resname="school.description">
+				<source>school</source>
+			</trans-unit>
+			<trans-unit id="howpublished.description" resname="howpublished.description">
+				<source>howpublished</source>
+			</trans-unit>
+			<trans-unit id="editor.description" resname="editor.description">
+				<source>Enter this format: firstname, lastname    or with mutliple: firstname, lastname; firstname, lastname</source>
+			</trans-unit>
+			<trans-unit id="startpage.description" resname="startpage.description">
+				<source>startpage</source>
+			</trans-unit>
+			<trans-unit id="endingpage.description" resname="endingpage.description">
+				<source>endingpage</source>
+			</trans-unit>
+			<trans-unit id="citationlable.description" resname="citationlable.description">
+				<source>used as key for bibTeX (@book {key ... })
+</source>
+			</trans-unit>
+			<trans-unit id="author.description" resname="author.description">
+				<source>author</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

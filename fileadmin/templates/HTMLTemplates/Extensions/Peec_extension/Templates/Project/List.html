@@ -1,0 +1,110 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <div class="container projects">
+        <f:if condition="{settings.limit}==1">
+            <f:then>
+            <div class="row center-startpage">
+                <f:for each="{projects}" as="project" iteration="iterator">
+                    <f:if condition="{iterator.cycle} < 4">
+                        <f:render partial="Project/SingleActiveProject" arguments="{project: project}"/>
+                    </f:if>
+                </f:for>
+            </div>
+            </f:then>
+            <f:else>
+                <f:render section="filter" arguments="{_all}"/>
+              <div class="row">
+                <h3>
+                  <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:currentprojects"/>
+                </h3>
+              </div>
+                <div class="row">
+                    <f:for each="{projects}" as="project">
+                        <f:if condition="{project.active} == true">
+                            <f:render partial="Project/SingleActiveProject" arguments="{project: project}"/>
+                        </f:if>
+                    </f:for>
+                </div>
+              <div class="row">
+                <h3>
+                  <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:pastprojects"/>
+                </h3>
+              </div>
+                <div class="mt-5 row">
+                    <f:for each="{projects}" as="project">
+                        <f:if condition="{project.active} == false">
+                            <f:render partial="Project/SingleFinishedProject" arguments="{project: project}"/>
+                        </f:if>
+                    </f:for>
+                </div>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+
+<f:section name="filter">
+    <section>
+        <div class="filter">
+            <div class="input-group">
+                <select class="custom-select" id="project_filter_cat" onchange="window.location=this.value">
+                    <f:if condition="{filter.category} == 0">
+                        <f:then>
+                            <option selected value='{f:uri.action(action:"list", arguments:"{demands: {category:0}}", addQueryString:"GET" )}'>
+                                <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.allcategories"/>
+                            </option>
+                        </f:then>
+                        <f:else>
+                            <option value='{f:uri.action(action:"list", arguments:"{demands: {category:0}}", addQueryString:"GET" )}'>
+                                <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.allcategories"/>
+                            </option>
+                        </f:else>
+                    </f:if>
+
+                    <f:for each="{categories}" as="category">
+                        <f:if condition="{filter.category} == {category.uid}">
+                            <f:then>
+                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {category:category}}", addQueryString:"GET" )}'>{category.name} ({category.abbreviation})</option>
+                            </f:then>
+                            <f:else>
+                                <option value='{f:uri.action(action:"list", arguments:"{demands: {category:category}}", addQueryString:"GET" )}'>{category.name} ({category.abbreviation})</option>
+                            </f:else>
+                        </f:if>
+
+                    </f:for>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <select class="custom-select" id="project_filter_author" onchange="window.location=this.value">
+                    <f:if condition="{filter.employee} == 0">
+                        <f:then>
+                            <option selected value='{f:uri.action(action:"list", arguments:"{demands: {employee:0}}", addQueryString:"GET" )}'>
+                                <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.allemployees"/>
+                            </option>
+                        </f:then>
+                        <f:else>
+                            <option value='{f:uri.action(action:"list", arguments:"{demands: {employee:0}}", addQueryString:"GET" )}'>
+                                <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.allemployees"/>
+                            </option>
+                        </f:else>
+                    </f:if>
+
+                    <f:for each="{employees}" as="employee">
+                        <f:if condition="{filter.employee} == {employee.uid}">
+                            <f:then>
+                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {employee:employee}}", addQueryString:"GET" )}'>{employee.firstname} {employee.lastname}</option>
+                            </f:then>
+                            <f:else>
+                                <option value='{f:uri.action(action:"list", arguments:"{demands: {employee:employee}}", addQueryString:"GET" )}'>{employee.firstname} {employee.lastname}</option>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </select>
+            </div>
+
+            <f:render partial="Filter/FromToYear" arguments="{_all}"/>
+        </div>
+    </section>
+</f:section>

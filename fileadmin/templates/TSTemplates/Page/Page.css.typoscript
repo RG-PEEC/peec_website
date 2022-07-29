@@ -1,0 +1,21 @@
+#css import
+page.includeCSS {
+    10 = {$path.cssFolder}/fonts.css
+    10 {
+        media = all
+    }
+
+    15 = {$path.cssFolder}/lightbox.css
+    15 {
+        media = all
+    }
+
+    20 = {$path.cssFolder}/fontawesome.css
+    20 {
+        media = all
+    }
+    30 = {$path.cssFolder}/main.css
+    30 {
+        media = all
+    }
+}

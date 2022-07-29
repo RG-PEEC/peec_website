@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>Listing for Publication</h1>
+
+    <f:flashMessages />
+
+    <table  class="tx_peecextension" >
+        <tr>
+            <th><f:translate key="tx_peecextension_domain_model_publication.title" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.type" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.pdf" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.referencelink" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.doi" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.journal" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.year" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.volume" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.number" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.month" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.note" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.publisher" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.address" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.edition" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.isbn" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.booktitle" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.organization" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.series" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.chapter" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.school" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.howpublished" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.editor" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.startpage" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.endingpage" /></th>
+            <th><f:translate key="tx_peecextension_domain_model_publication.citationlable" /></th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+        <f:for each="{publications}" as="publication">
+            <tr>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.title}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.type}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.pdf.originalResource.name}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.referencelink}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.doi}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.journal}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.year}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.volume}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.number}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.month}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.note}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.publisher}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.address}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.edition}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.isbn}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.booktitle}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.organization}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.series}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.chapter}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.school}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.howpublished}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.editor}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.startpage}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.endingpage}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{publication : publication}">{publication.citationlable}</f:link.action></td>
+                <td><f:link.action action="edit" arguments="{publication : publication}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{publication : publication}">Delete</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+    <f:link.action action="new">New Publication</f:link.action>
+</f:section>
+</html>

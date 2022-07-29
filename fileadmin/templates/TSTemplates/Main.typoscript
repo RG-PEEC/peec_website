@@ -1,0 +1,7 @@
+@import 'fileadmin/templates/TSTemplates/Menu/Menu.main.typoscript'
+@import 'fileadmin/templates/TSTemplates/Lang/Lang.switch.typoscript'
+@import 'fileadmin/templates/TSTemplates/Page/Page.main.typoscript'
+@import 'fileadmin/templates/TSTemplates/News/News.config.typoscript'
+@import 'fileadmin/templates/TSTemplates/Peec_Extension/setup.typoscript'
+
+

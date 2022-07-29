@@ -1,0 +1,78 @@
+<T3DataStructure>
+<sheets>
+    <sDEF>
+        <ROOT>
+            <TCEforms>
+                <sheetTitle>Einstellungen</sheetTitle>
+            </TCEforms>
+            <type>array</type>
+            <el>
+                <switchableControllerActions>
+                    <TCEforms>
+                        <label>Ansicht</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="1">
+                                    <numIndex index="0">Mitarbeiterliste</numIndex>
+                                    <numIndex index="1">Employee->list;Employee->show</numIndex>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <numIndex index="0">Projektliste</numIndex>
+                                    <numIndex index="1">Project->list;Project->show</numIndex>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <numIndex index="0">Projektdetail</numIndex>
+                                    <numIndex index="1">Project->show</numIndex>
+                                </numIndex>
+                                <numIndex index="4">
+                                    <numIndex index="0">Publikationsliste</numIndex>
+                                    <numIndex index="1">Publication->list;Publication->downloadBibTex</numIndex>
+                                </numIndex>
+                                <numIndex index="5">
+                                    <numIndex index="0">Partner</numIndex>
+                                    <numIndex index="1">Partner->list</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </TCEforms>
+                </switchableControllerActions>
+            </el>
+        </ROOT>
+    </sDEF>
+
+
+    <additional>
+        <ROOT>
+            <TCEforms>
+                <sheetTitle>Erweitert</sheetTitle>
+            </TCEforms>
+            <type>array</type>
+            <el>
+                <settings.limit>
+                    <TCEforms>
+                        <label>Display on Homepage</label>
+                        <config>
+                            <type>check</type>
+                        </config>
+                    </TCEforms>
+                </settings.limit>
+                <settings.project>
+                    <TCEforms>
+                        <label>Projects</label>
+                        <config>
+                            <type>group</type>
+                            <internal_type>db</internal_type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                            <minitems>0</minitems>
+                        </config>
+                    </TCEforms>
+                </settings.project>
+            </el>
+        </ROOT>
+    </additional>
+</sheets>
+</T3DataStructure>

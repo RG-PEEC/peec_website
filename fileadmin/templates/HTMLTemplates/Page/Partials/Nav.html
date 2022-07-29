@@ -1,0 +1,73 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+
+<div id="nav">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid h-100">
+
+            <f:link.page class="navbar-brand" pageUid="3">
+<!--                <a class="navbar-brand" href="">-->
+                    <img class="logo" src="fileadmin/templates/img/Logo.svg" alt="Peec Logo">
+<!--                </a>-->
+            </f:link.page>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse h-100 p-0" id="navbarResponsive">
+                <div class="navbar-nav ml-auto">
+                    <f:if condition="{mainnavigation}">
+                        <f:for each="{mainnavigation}" as="menuItem">
+                            <f:if condition="{menuItem.active}">
+                                <f:then>
+                                    <a href="{menuItem.link}"
+                                       class="nav-item nav-link nav-link active">{menuItem.title}</a>
+                                </f:then>
+                                <f:else>
+                                    <a href="{menuItem.link}" class="nav-item nav-link">{menuItem.title}</a>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:if>
+
+                    <!--<a class="nav-item nav-link active" href="index.html">This is PEEC</a>
+                    <a class="nav-item nav-link" href="news.html">News</a>
+                    <a class="nav-item nav-link" href="projects.html">Projects</a>
+                    <a class="nav-item nav-link" href="team.html">Team</a>
+                    <a class="nav-item nav-link" href="publications.html">Publications</a>
+                    <a class="nav-item nav-link" href="Partners.html">Partners</a>-->
+                </div>
+
+
+
+
+                <!--                <div class="lang-menu">-->
+                <!--                    <a class="" href="#">EN</a> |-->
+                <!--                    <a class="" href="#">DE</a>-->
+                <!--                </div>-->
+                <f:if condition="{languageNavigation}">
+                    <div class="lang-menu">
+                        <f:for each="{languageNavigation}" as="item">
+                            <div class="{f:if(condition: item.active, then: 'active')}">
+                                <f:if condition="{item.available}">
+                                    <f:then>
+                                        <a href="{item.link}" hreflang="{item.hreflang}" title="{item.navigationTitle}">
+                                            {item.navigationTitle}
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <p>{item.navigationTitle}</p>
+                                    </f:else>
+                                </f:if>
+                            </div>
+                        </f:for>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </nav>
+</div>

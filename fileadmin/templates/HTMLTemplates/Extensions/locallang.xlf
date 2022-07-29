@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+<file source-language="en" datatype="plaintext" date="2013-09-08T21:34:32Z" product-name="myproduct">
+   <header/>
+   <body>
+       <trans-unit id="Employee.button.publications">
+          <source>Publications</source>
+       </trans-unit>
+       <trans-unit id="Employee.button.projects">
+          <source>Projects</source>
+       </trans-unit>
+       <trans-unit id="Employee.education">
+          <source>Education</source>
+       </trans-unit>
+       <trans-unit id="Employee.career">
+          <source>Career</source>
+       </trans-unit>
+       <trans-unit id="Employee.enddate.today">
+          <source>today</source>
+       </trans-unit>
+       <trans-unit id="Publication.article">
+          <source>Journal Article</source>
+       </trans-unit>
+       <trans-unit id="Publication.reference">
+          <source>link</source>
+       </trans-unit>
+       <trans-unit id="Publication.book">
+          <source>Book</source>
+       </trans-unit>
+       <trans-unit id="Publication.bookchapter">
+          <source>Book Chapter</source>
+       </trans-unit>
+       <trans-unit id="Publication.conferencepaper">
+           <source>Conference Paper</source>
+       </trans-unit>
+       <trans-unit id="Publication.misc">
+          <source>Misc</source>
+       </trans-unit>
+       <trans-unit id="companypartners">
+          <source>Company Partners</source>
+       </trans-unit>
+       <trans-unit id="researchpartners">
+          <source>Scientific Partners</source>
+       </trans-unit>
+       <trans-unit id="fundingpartners">
+            <source>Funding Partners</source>
+       </trans-unit>
+       <trans-unit id="publication">
+           <source>Publications</source>
+       </trans-unit>
+       <trans-unit id="project.start">
+          <source>Start date: </source>
+       </trans-unit>
+		<trans-unit id="project.end">
+          <source>End date: </source>
+       </trans-unit>
+       <trans-unit id="project.categories">
+          <source>Categories: </source>
+       </trans-unit>
+       <trans-unit id="project.category">
+          <source>Category: </source>
+       </trans-unit>
+       <trans-unit id="project.lead">
+          <source>Project lead</source>
+       </trans-unit>
+       <trans-unit id="project.crew">
+          <source>Members</source>
+       </trans-unit>
+       <trans-unit id="project.backtooverview">
+           <source>Back to projectoverview</source>
+       </trans-unit>
+       <trans-unit id="publication.type">
+          <source>Type</source>
+       </trans-unit>
+       <trans-unit id="publication.paper">
+          <source>Paper</source>
+       </trans-unit>
+       <trans-unit id="bibtex.close">
+           <source>close</source>
+       </trans-unit>
+       <trans-unit id="nopicture">
+           <source>No picture.</source>
+       </trans-unit>
+       <trans-unit id="employee.atcompany">
+           <source>at</source>
+       </trans-unit>
+       <trans-unit id="bibtex.download">
+           <source>Download BibTeX</source>
+       </trans-unit>
+
+       <trans-unit id="filter.fromyear">
+           <source>from</source>
+       </trans-unit>
+       <trans-unit id="filter.toyear">
+           <source>to</source>
+       </trans-unit>
+       <trans-unit id="filter.alltypes">
+           <source>show all types</source>
+       </trans-unit>
+       <trans-unit id="filter.allemployees">
+           <source>show all participants</source>
+       </trans-unit>
+       <trans-unit id="filter.allcategories">
+           <source>show all categories</source>
+       </trans-unit>
+       <trans-unit id="filter.allauthors">
+           <source>show all authors</source>
+       </trans-unit>
+		<trans-unit id="currentprojects">
+           <source>Active projects</source>
+       </trans-unit>
+		<trans-unit id="pastprojects">
+           <source>Completed projects</source>
+       </trans-unit>
+       <trans-unit id="showmembers">
+           <source>Show Members</source>
+       </trans-unit>
+   </body>
+</file>
+</xliff>

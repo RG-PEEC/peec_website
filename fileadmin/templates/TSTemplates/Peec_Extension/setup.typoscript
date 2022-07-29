@@ -1,0 +1,7 @@
+plugin.tx_peecextension {
+    view {
+        templateRootPaths.1 = fileadmin/templates/HTMLTemplates/Extensions/Peec_extension/Templates
+        partialRootPaths.1 = fileadmin/templates/HTMLTemplates/Extensions/Peec_extension/Partials
+        layoutRootPaths.1 = fileadmin/templates/HTMLTemplates/Extensions/Peec_extension/Layouts
+    }
+}

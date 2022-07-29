@@ -1,0 +1,266 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="content">
+    <div class="project-detail mt-5 container">
+        <div class="row justify-content-center m-0">
+            <div class="col-lg-8 text-center mr-3">
+                <div class="row">
+                    <f:if condition="{project.teaserimage}">
+                        <f:then>
+                            <div class="col-lg-4">
+
+                                <f:media class="coverImg rounded mr-2" file="{project.teaserimage}"/>
+                                <p class="pt-3 pr-2 text-center">
+                                    <f:link.page pageUid="4" additionalParams="{_all}" class="text-muted"><i
+                                            class="fa fa-arrow-left pr-1"></i>
+                                        <f:translate
+                                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.backtooverview"/>
+                                    </f:link.page>
+                                </p>
+                            </div>
+
+                        </f:then>
+                        <f:else>
+                            <p class="row">
+                                <f:link.page pageUid="4" additionalParams="{_all}" class="offset-3 col-8 text-muted"><i
+                                        class="fa fa-arrow-left pr-1"></i>
+                                    <f:translate
+                                            key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.backtooverview"/>
+                                </f:link.page>
+                            </p>
+                        </f:else>
+                    </f:if>
+
+
+                    <div class="pl-5 col-lg-8">
+                        <f:if condition="{project.title}">
+                            <h2 class="text-left">{project.title}</h2>
+                        </f:if>
+
+                        <f:if condition="{project.startdate}">
+                            <p class="text-left"><span class="font-weight-bold">
+                        <f:translate
+                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.start"/></span>
+                                <f:format.date format="d-m-Y">{project.startdate}</f:format.date>
+                            </p>
+                        </f:if>
+                      
+                      <f:if condition="{project.enddate}">
+                            <p class="text-left"><span class="font-weight-bold">
+                        <f:translate
+                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.end"/></span>
+                                <f:format.date format="d-m-Y">{project.enddate}</f:format.date>
+                            </p>
+                        </f:if>
+
+                        <f:if condition="{project.category}">
+                            <div class="project-detail-categorylist">
+                                <f:if condition="{project.category->f:count()} > 1">
+                                    <f:then>
+                                        <p class="font-weight-bold text-left">
+                                            <f:translate
+                                                    key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.categories"/>
+                                        </p>
+                                    </f:then>
+                                    <f:else>
+                                        <p class="font-weight-bold text-left">
+                                            <f:translate
+                                                    key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.category"/>
+                                        </p>
+                                    </f:else>
+                                </f:if>
+                                <f:if condition="{project.category}">
+                                    <ul class="m-0">
+                                        <f:for each="{project.category}" as="cat">
+                                            <f:if condition="{cat.name}">
+                                                <li class="text-left">{cat.name}</li>
+                                            </f:if>
+                                        </f:for>
+                                    </ul>
+                                </f:if>
+                            </div>
+                        </f:if>
+                    </div>
+
+                    <f:if condition="{project.description}">
+                        <div class="project-desc pr-4 pl-lg-0 pl-5 mt-4 mb-4 text-left">{project.description ->
+                            f:format.html()}
+                        </div>
+                    </f:if>
+
+
+                    <f:if condition="{project.media}">
+                        <f:for each="{project.media}" as="picture">
+                            <f:if condition="{picture.title}">
+                                <f:then>
+                                    <div class="col-lg-12">
+                                        <a href="/fileadmin/user_upload/Altmann.jpg"
+                                           data-lightbox="{project.title}-gallery"
+                                           data-title="{picture.title}">
+                                            <f:image image="{picture}" width="450" class="rounded m-2"/>
+                                            <p class="ml-2 text-small text-muted picture-text">Picture Title</p>
+                                        </a>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <div class="col-lg-12">
+
+                                        <a href="{picture.originalResource.publicUrl}" class="lightbox-picture"
+                                           data-lightbox="{project.title}-gallery"
+                                           data-title="{project.title}">
+                                            <f:image image="{picture}" width="450" class="rounded m-2 project-pics"/>
+                                        </a>
+
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:if>
+
+                    <f:if condition="{project.publication}">
+                        <p class="font-weight-bold m-0 pt-3">
+                            <f:translate
+                                    key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:publication"/>
+                        </p>
+                        <div class="project-detail-publication-list pr-4 pl-lg-0 pl-5 mt-4 mb-4 text-left">
+                            <f:for each="{project.publication}" as="pub">
+                                <f:render partial="Publication/ListItem" arguments="{publication: pub, showAll:0}"/>
+                            </f:for>
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+
+
+            <div class="col-lg-2 text-center">
+                <f:if condition="{project.leader}">
+                    <p class="font-weight-bold">
+                        <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.lead"/>
+                    </p>
+                    <div class="project-detail-leaderlist">
+                        <f:if condition="{project.leader.picture}">
+                            <f:then>
+                                <f:media class="projectDetailImg rounded-circle ml-2 mr-2 mb-2"
+                                         title="{project.leader.firstname} {project.leader.lastname}"
+                                         alt="Placeholder Picture for {project.leader.firstname} {project.leader.lastname}"
+                                         file="{project.leader.picture}"/>
+                                <p class="text-small">{project.leader.firstname} {project.leader.lastname}</p>
+                            </f:then>
+                            <f:else>
+                                <f:image class="projectDetailImg rounded-circle ml-2 mr-2 mb-2"
+                                         title="{project.leader.firstname} {project.leader.lastname}"
+                                         alt="Placeholder Picture for {project.leader.firstname} {project.leader.lastname}"
+                                         src="EXT:peec_extension/Resources/Public/Icons/stockuser.svg"/>
+                                <p class="text-small">{project.leader.firstname} {project.leader.lastname}</p>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </f:if>
+
+                <f:if condition="{project.member}">
+                    <p class="font-weight-bold">
+                        <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:project.crew"/>
+                    </p>
+                    <div class="project-detail-memberlist">
+                        <f:for each="{project.member}" as="member">
+                            <f:if condition="{member.picture}">
+                                <f:then>
+                                    <f:media class="projectDetailImg rounded-circle ml-2 mr-2 mb-2"
+                                             title="{member.firstname} {member.lastname}"
+                                             alt="Picture of {member.firstname} {member.lastname}"
+                                             file="{member.picture}"/>
+                                    <p class="text-small">{member.firstname} {member.lastname}</p>
+                                </f:then>
+                                <f:else>
+                                    <f:image class="projectDetailImg rounded-circle ml-2 mr-2 mb-2 p-1"
+                                             title="{member.firstname} {member.lastname}"
+                                             alt="Placeholder Picture for {member.firstname} {member.lastname}"
+                                             src="EXT:peec_extension/Resources/Public/Icons/stockuser.svg"/>
+                                    <p class="text-small">{member.firstname} {member.lastname}</p>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </f:if>
+
+                <f:if condition="{project.fundingpartner}">
+                    <p class="font-weight-bold m-0 pt-3">
+                        <f:translate
+                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:fundingpartners"/>
+                    </p>
+                    <div class="clearfix mb-4 project-detail-fundingpartnerlist">
+                        <f:for each="{project.fundingpartner}" as="partner">
+                            <f:if condition="{partner.abbreviation}">
+                                <f:if condition="{partner.logo}">
+                                    <f:if condition="{partner.website}">
+                                        <a href="{partner.website}" target="_blank">
+                                            <div class="tooltip">
+                                                <f:media file="{partner.logo}"
+                                                         class="m-3 project-partner-logo"
+                                                         />
+                                                <span class="tooltiptext">{partner.name}</span>
+                                            </div>
+                                        </a><br>
+                                    </f:if>
+                                </f:if>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </f:if>
+
+                <f:if condition="{project.companypartner}">
+                    <p class="font-weight-bold m-0 pt-3">
+                        <f:translate
+                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:companypartners"/>
+                    </p>
+                    <div class="clearfix mb-4 project-detail-companypartnerlist">
+                        <f:for each="{project.companypartner}" as="partner">
+                            <f:if condition="{partner.abbreviation}">
+                                <f:if condition="{partner.logo}">
+                                    <f:if condition="{partner.website}">
+                                        <a href="{partner.website}" target="_blank">
+                                            <div class="tooltip">
+                                                <f:media file="{partner.logo}"
+                                                         class="m-3 project-partner-logo"
+                                                         />
+                                                <span class="tooltiptext">{partner.name}</span>
+                                            </div>
+                                        </a>
+                                    </f:if>
+                                </f:if>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </f:if>
+
+                <f:if condition="{project.researchpartner}">
+                    <p class="font-weight-bold m-0 pt-3">
+                        <f:translate
+                                key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:researchpartners"/>
+                    </p>
+                    <div class="clearfix mb-4 project-detail-researchpartnerlist">
+                        <f:for each="{project.researchpartner}" as="partner">
+                            <f:if condition="{partner.abbreviation}">
+                                <f:if condition="{partner.logo}">
+                                    <f:if condition="{partner.website}">
+                                        <a href="{partner.website}" target="_blank">
+                                            <div class="tooltip">
+                                                <f:media file="{partner.logo}"
+                                                         class="m-3 project-partner-logo"
+                                                         />
+                                                <span class="tooltiptext">{partner.name}</span>
+                                            </div>
+                                        </a>
+                                    </f:if>
+                                </f:if>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </div>
+
+</f:section>
+</html>

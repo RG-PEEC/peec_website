@@ -1,0 +1,15 @@
+path {
+    #templateRoot = fileadmin/templates/HTMLTemplates/Page/Templates/index.html
+    templateMain = fileadmin/templates/HTMLTemplates/Page/Templates/index.html
+    templatePartners = fileadmin/templates/HTMLTemplates/Page/Templates/partners.html
+    templateNews = fileadmin/templates/HTMLTemplates/Page/Templates/news.html
+    templateTeam = fileadmin/templates/HTMLTemplates/Page/Templates/team.html
+    templateProjects = fileadmin/templates/HTMLTemplates/Page/Templates/projects.html
+    templatePublications = fileadmin/templates/HTMLTemplates/Page/Templates/publications.html
+
+    partials = fileadmin/templates/HTMLTemplates/Page/Partials
+    layouts = fileadmin/templates/HTMLTemplates/Page/Layouts
+    cssFolder = fileadmin/templates/assets/css
+    jsFolder = fileadmin/templates/assets/js
+    fluidStyledContent = fileadmin/templates/HTMLTemplates/Extensions/fluid_styled_content/Resources/Private
+}

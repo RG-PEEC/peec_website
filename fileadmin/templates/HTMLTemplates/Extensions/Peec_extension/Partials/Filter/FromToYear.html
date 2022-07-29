@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="input-group">
+    <select class="custom-select" id="pub_filter_from" onchange="window.location=this.value">
+        <f:if condition="{filter.minYear} == 0">
+            <f:then>
+                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {from:0}}", addQueryString:"GET" )}'>
+                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.fromyear"/>
+                </option>
+            </f:then>
+            <f:else>
+                <option value='{f:uri.action(action:"list", arguments:"{demands: {from:0}}", addQueryString:"GET" )}'>
+                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.fromyear"/>
+                </option>
+            </f:else>
+        </f:if>
+
+        <f:for each="{interval}" as="year">
+            <f:if condition="{filter.minYear} == {year}">
+                <f:then>
+                    <option selected value='{f:uri.action(action:"list", arguments:"{demands: {from:year}}", addQueryString:"GET" )}'>{year}</option>
+                </f:then>
+                <f:else>
+                    <option value='{f:uri.action(action:"list", arguments:"{demands: {from:year}}", addQueryString:"GET" )}'>{year}</option>
+                </f:else>
+            </f:if>
+        </f:for>
+    </select>
+</div>
+
+<div class="input-group">
+    <select class="custom-select" id="pub_filter_to" onchange="window.location=this.value">
+        <f:if condition="{filter.maxYear} == 0">
+            <f:then>
+                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {to:0}}", addQueryString:"GET" )}'>
+                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.toyear"/>
+                </option>
+            </f:then>
+            <f:else>
+                <option value='{f:uri.action(action:"list", arguments:"{demands: {to:0}}", addQueryString:"GET" )}'>
+                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.toyear"/>
+                </option>
+            </f:else>
+        </f:if>
+
+        <f:for each="{interval}" as="year">
+            <f:if condition="{filter.maxYear} == {year}">
+                <f:then>
+                    <option selected value='{f:uri.action(action:"list", arguments:"{demands: {to:year}}", addQueryString:"GET" )}'>{year}</option>
+                </f:then>
+                <f:else>
+                    <option value='{f:uri.action(action:"list", arguments:"{demands: {to:year}}", addQueryString:"GET" )}'>{year}</option>
+                </f:else>
+            </f:if>
+        </f:for>
+    </select>
+</div>

@@ -1,0 +1,56 @@
+config {
+    debug = 1
+    doctype = html5
+    htmlTag_setParams = none
+
+    htmlTag_stdWrap {
+        setContentToCurrent = 1
+        cObject = COA
+        cObject {
+            10 = TEXT
+            10.value = class="no-js"
+            10.noTrimWrap = | | |
+            20 = TEXT
+            20.value = lang="de"
+            wrap = <html | >
+        }
+    }
+
+    renderCharset = utf-8
+    metaCharset = utf-8
+
+    // Cache settings
+    cache_period = 86400
+    sendCacheHeaders = 1
+    cache_clearAtMidnight = 0
+    no_cache = 0
+
+    simulateStaticDocuments = 0
+
+    // Language Settings
+    uniqueLinkVars = 1
+    language = de
+    locale_all = de_DE.utf-8
+    metaCharset = utf-8
+    renderCharset = utf-8
+    htmlTag_langKey = de
+    htmlTag_setParams = lang="de"
+
+    prefixLocalAnchors = all
+
+    intTarget =
+    extTarget =
+
+
+    index_enable = 0
+    index_externals = 0
+    index_metatags = 0
+
+
+    disablePrefixComment = 1
+    # create one js file (deactivated)
+    concatenateJs = 0
+    concatenateCss = 0
+    compressJs = 0
+    compressCss = 0
+}

@@ -1,0 +1,88 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="close-popup-container d-flex justify-content-end">
+    <i class="close-popup fas fa-times"></i>
+</div>
+<div class="container member-content">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="member-name">
+                <f:if condition="{employee.academictitle}">{employee.academictitle}</f:if>
+                {employee.firstname} {employee.lastname}
+                <f:if condition="{employee.academictitle}">{employee.postacademictitle}</f:if>
+            </h3>
+            <p class="contact">
+                <f:if condition="{employee.email}">
+                    <a href="mailto:{employee.email}"><i class="fas fa-envelope"></i>{employee.email}</a>
+                </f:if>
+            </p>
+            <f:if condition="{employee.phonenumber}">
+                <p class="contact"><a href="tel:{employee.phonenumber}"><i class="fas fa-phone"></i>{employee.phonenumber}</a></p>
+            </f:if>
+        </div>
+        <div class="col-sm container">
+            <div class="row">
+                <div class="col-xl-4 col-md-5 col-sm-12 col-5">
+                    <f:link.action class="btn btn-link-page" controller="Project" pageUid="4" action="list" arguments="{demands:{employee:employee}}">
+                        <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.button.projects"/>
+                    </f:link.action>
+                    <f:link.action class="btn btn-link-page" controller="Publication" pageUid="7" action="list" arguments="{demands:{employee:employee}}">
+                        <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.button.publications"/>
+                    </f:link.action>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <f:if condition="{employee.education}">
+            <div class="col-sm">
+                <h4><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.education"/></h4>
+                <f:for each="{employee.education}" as="education">
+                    <div class="member-infos education">
+                        <p class="member-infos-name">{education.name}, {education.subject}</p>
+
+                        <f:if condition="{education.type}">
+                            <p class="member-infos-name"><i class="fas fa-graduation-cap"></i>{education.type}</p>
+                        </f:if>
+
+                        <p class="member-infos-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <f:format.date format="d-m-Y">{education.startdate}</f:format.date> -
+                            <f:if condition="{education.enddate}">
+                                <f:then><f:format.date format="d-m-Y">{education.enddate}</f:format.date></f:then>
+                                <f:else><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.enddate.today"/></f:else>
+                            </f:if>
+                        </p>
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+
+        <f:if condition="{employee.career}}">
+            <div class="col-sm jobs">
+                <h4><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.career"/></h4>
+                <f:for each="{employee.career}" as="career">
+                    <div class="member-infos career">
+                        <p class="member-infos-name">{career.position} <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.button.employee.atcompany"/> {career.company}</p>
+
+                        <f:if condition="{career.description}">
+                            {career.description->f:format.html()}
+                        </f:if>
+
+                        <f:if condition="{career.place}">
+                            <p class="member-infos-name"><i class="fas fa-map-marker"></i> {career.place}</p>
+                        </f:if>
+
+                        <p class="member-infos-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <f:format.date format="d-m-Y">{career.startdate}</f:format.date> -
+                            <f:if condition="{career.enddate}">
+                                <f:then><f:format.date format="d-m-Y">{career.enddate}</f:format.date></f:then>
+                                <f:else><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Employee.enddate.today"/></f:else>
+                            </f:if>
+                        </p>
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</div>

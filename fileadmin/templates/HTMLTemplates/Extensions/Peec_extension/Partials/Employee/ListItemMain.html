@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{employee.picture}">
+    <f:then>
+        <f:media class="member-picture" file="{employee.picture}"/>
+    </f:then>
+    <f:else>
+        <div class="member-picture d-flex align-items-center justify-content-center">
+            <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:nopicture"/>
+        </div>
+    </f:else>
+</f:if>
+<h4 class="member-name">
+    <f:if condition="{employee.academictitle}">{employee.academictitle}</f:if>
+    {employee.firstname} {employee.lastname}
+    <f:if condition="{employee.postacademictitle}">{employee.postacademictitle}</f:if>
+</h4>
+<f:if condition="{employee.position}">
+    <p class="member-description">{employee.position.name}</p>
+</f:if>
+<a href="#" class="member-email">
+    <f:if condition="{employee.email}">{employee.email}</f:if>
+</a>
+<div class="triangle-up"></div>

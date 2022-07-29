@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div id="footer">
+    <footer class="footer container-fluid pt-5 mt-5 border-top">
+
+        <h6><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Page/locallang.xlf:footer.contact"/></h6>
+        <p><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Page/locallang.xlf:footer.peec"/></p>
+        <p>Softwarepark 13-15</p>
+        <p>A-4232 Hagenberg im Mühlkreis</p>
+
+        <h6><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Page/locallang.xlf:footer.menu"/></h6>
+        <p class="footer-p">
+            <f:if condition="{mainnavigation}">
+                <f:for each="{mainnavigation}" as="FooterItem" iteration="iterator">
+                    <f:if condition="{iterator.isLast}">
+                        <f:then>
+                            <f:link.page pageUid="{FooterItem.link}"><a class="footer-p" href="{FooterItem.link}">{FooterItem.title}</a></f:link.page>
+                        </f:then>
+                        <f:else>
+                            <f:link.page pageUid="{FooterItem.link}"><a class="footer-p" href="{FooterItem.link}">{FooterItem.title} | </a></f:link.page>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </f:if>
+
+            <p class="footer-p">
+                <f:link.page pageUid="15"><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Page/locallang.xlf:footer.imprint"/></f:link.page> |
+                <f:link.page pageUid="16"><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Page/locallang.xlf:footer.privacy"/></f:link.page> |
+            © 2020 KWM | <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Page/locallang.xlf:footer.rights"/>
+            </p>
+        </p>
+    </footer>
+</div>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+<file source-language="en" target-language="de" datatype="plaintext" date="2013-09-08T21:34:32Z" product-name="myproduct">
+   <header/>
+   <body>
+       <trans-unit id="Employee.button.publications">
+           <target>Publikationen</target>
+       </trans-unit>
+       <trans-unit id="Employee.button.projects">
+           <target>Projekte</target>
+       </trans-unit>
+       <trans-unit id="Employee.education">
+           <target>Ausbildung</target>
+       </trans-unit>
+       <trans-unit id="Employee.career">
+           <target>Karriere</target>
+       </trans-unit>
+       <trans-unit id="Employee.enddate.today">
+           <target>heute</target>
+       </trans-unit>
+       <trans-unit id="Publication.article">
+           <target>Artikel</target>
+       </trans-unit>
+       <trans-unit id="Publication.reference">
+           <target>Link</target>
+       </trans-unit>
+       <trans-unit id="Publication.book">
+           <target>Buch</target>
+       </trans-unit>
+       <trans-unit id="Publication.bookchapter">
+           <target>Buchkapitel</target>
+       </trans-unit>
+       <trans-unit id="Publication.conferencepaper">
+           <target>Konferenzpaper</target>
+       </trans-unit>
+       <trans-unit id="Publication.misc">
+           <target>Sonstige</target>
+       </trans-unit>
+       <trans-unit id="companypartners">
+           <target>Unternehmenspartner</target>
+       </trans-unit>
+       <trans-unit id="researchpartners">
+           <target>Wissenschaftliche Partner</target>
+       </trans-unit>
+       <trans-unit id="fundingpartners">
+           <target>Fördergeber</target>
+       </trans-unit>
+       <trans-unit id="publication">
+           <target>Publikationen</target>
+       </trans-unit>
+       <trans-unit id="project.start">
+           <target>Projektstart: </target>
+       </trans-unit>
+  <trans-unit id="project.end">
+           <target>Projektende: </target>
+       </trans-unit>
+       <trans-unit id="project.categories">
+           <target>Kategorien: </target>
+       </trans-unit>
+       <trans-unit id="project.category">
+           <target>Kategorie: </target>
+       </trans-unit>
+       <trans-unit id="project.lead">
+           <target>Leitung</target>
+       </trans-unit>
+       <trans-unit id="project.crew">
+           <target>Mitglieder</target>
+       </trans-unit>
+       <trans-unit id="project.backtooverview">
+           <target>Zurück zur Projektübersicht</target>
+       </trans-unit>
+       <trans-unit id="publication.type">
+           <target>Typ</target>
+       </trans-unit>
+       <trans-unit id="publication.paper">
+           <target>Bericht</target>
+       </trans-unit>
+       <trans-unit id="bibtex.close">
+           <target>Schließen</target>
+       </trans-unit>
+       <trans-unit id="nopicture">
+           <target>Kein Bild.</target>
+       </trans-unit>
+       <trans-unit id="employee.atcompany">
+           <target>bei</target>
+       </trans-unit>
+       <trans-unit id="bibtex.download">
+           <target>BibTeX herunterladen</target>
+       </trans-unit>
+
+       <trans-unit id="filter.fromyear">
+           <target>von</target>
+       </trans-unit>
+       <trans-unit id="filter.toyear">
+           <target>bis</target>
+       </trans-unit>
+       <trans-unit id="filter.alltypes">
+           <target>alle Typen anzeigen</target>
+       </trans-unit>
+       <trans-unit id="filter.allemployees">
+           <target>alle Beteiligten anzeigen</target>
+       </trans-unit>
+       <trans-unit id="filter.allcategories">
+           <target>alle Kategorien anzeigen</target>
+       </trans-unit>
+       <trans-unit id="filter.allauthors">
+           <target>alle Autoren anzeigen</target>
+       </trans-unit>
+  		<trans-unit id="currentprojects">
+           <target>Laufende Projekte</target>
+       </trans-unit>
+		<trans-unit id="pastprojects">
+           <target>Abgeschlossene Projekte</target>
+       </trans-unit>
+       <trans-unit id="showmembers">
+           <target>Mitglieder anzeigen</target>
+       </trans-unit>
+   </body>
+</file>
+</xliff>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:peec_extension/Resources/Private/Language/locallang_csh" date="2020-06-23T16:52:46Z" product-name="peec_extension">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="abbreviation.description" resname="abbreviation.description">
+				<source>abbreviation</source>
+			</trans-unit>
+			<trans-unit id="website.description" resname="website.description">
+				<source>website</source>
+			</trans-unit>
+			<trans-unit id="logo.description" resname="logo.description">
+				<source>logo</source>
+			</trans-unit>
+			<trans-unit id="display.description" resname="display.description">
+				<source>if check, partner is displayed on partnerpage</source>
+			</trans-unit>
+			<trans-unit id="participant.description" resname="participant.description">
+				<source>participant</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

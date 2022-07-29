@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd"
+      data-namespace-typo3-fluid="true">
+{f:variable(name: 'indexItem', value: 0)}
+{f:variable(name: 'indexPopup', value: 0)}
+
+<f:groupedFor each="{employees}" as="employeesOfPosition" groupBy="position" groupKey="position">
+    <f:if condition="{position.name} == 'Former Member' || {position.name} == 'Former Member - Student' ||
+    {position.name} == 'Ehemaliges Mitglied' || {position.name} == 'Ehemaliges Mitglied - Student'">
+        <f:then>
+            <h3 style="text-align: center; margin-top: 25px">{position.name}</h3>
+            <button type="button" class="btn btn-view-more former-member" aria-label="Right Align">
+                <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:showmembers"/>
+            </button>
+            <div style="display: none">
+        </f:then>
+    </f:if>
+    <v:iterator.chunk count="3" subject="{employeesOfPosition}" as="chunkedEmployees">
+        <f:for each="{chunkedEmployees}" as="employeesChunk">
+            <f:if condition="{position.name} == 'Lead'">
+                <f:then>
+                    <div class="lead container">
+                </f:then>
+                <f:else>
+                    <div class="team container">
+                </f:else>
+            </f:if>
+
+                <div class="row d-flex">
+                    <f:for each="{employeesChunk}" as="employee">
+                        <f:render section="item" arguments="{employee: employee, array_index: indexItem}"/>
+                        {f:variable(name: 'indexItem', value: '{indexItem + 1}')}
+                    </f:for>
+                </div>
+            </div>
+
+            <f:for each="{employeesChunk}" as="employee">
+                <f:render section="popup" arguments="{employee: employee, array_index: indexPopup}"/>
+                {f:variable(name: 'indexPopup', value: '{indexPopup + 1}')}
+            </f:for>
+        </f:for>
+    </v:iterator.chunk>
+    <f:if condition="{position.name} == 'Former Member' || {position.name} == 'Former Member - Student' ||
+    {position.name} == 'Ehemaliges Mitglied' || {position.name} == 'Ehemaliges Mitglied - Student'">
+        <f:then>
+            </div>
+        </f:then>
+    </f:if>
+</f:groupedFor>
+
+<f:comment>
+    <v:iterator.chunk count="3" subject="{employees}" as="chunkedEmployees">
+        <f:for each="{chunkedEmployees}" as="employeesChunk">
+            <div class="team container">
+                <div class="row d-flex">
+                    <f:for each="{employeesChunk}" as="employee">
+                        <f:render section="item" arguments="{employee: employee, array_index: indexItem}"/>
+                        {f:variable(name: 'indexItem', value: '{indexItem + 1}')}
+                    </f:for>
+                </div>
+            </div>
+
+            <f:for each="{employeesChunk}" as="employee">
+                <f:render section="popup" arguments="{employee: employee, array_index: indexPopup}"/>
+                {f:variable(name: 'indexPopup', value: '{indexPopup + 1}')}
+            </f:for>
+        </f:for>
+    </v:iterator.chunk>
+</f:comment>
+
+<f:section name="item">
+    <div id="member{array_index}" class="d-flex flex-column align-items-center member member-team col-sm-12 col-md-5 col-lg-4">
+        <f:render partial="Employee/ListItemMain" arguments="{employee:employee}"/>
+    </div>
+</f:section>
+
+<f:section name="popup">
+    <div class="member-popup" id="popup-member{array_index}">
+        <f:render partial="Employee/Popup" arguments="{employee:employee}"/>
+    </div>
+</f:section>
+

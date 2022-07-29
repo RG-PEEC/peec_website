@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:groupedFor each="{employees}" as="employeesOfPosition" groupBy="position" groupKey="position">
+    <f:if condition="{position.name} == 'Former Member' || {position.name} == 'Former Member - Student' ||
+    {position.name} == 'Ehemaliges Mitglied' || {position.name} == 'Ehemaliges Mitglied - Student'">
+        <f:then>
+            <h3 style="text-align: center; margin-top: 25px">{position.name}</h3>
+            <button type="button" class="btn btn-view-more former-member" aria-label="Right Align">
+                <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:showmembers"/>
+            </button>
+            <div style="display: none">
+        </f:then>
+    </f:if>
+<f:for each="{employeesOfPosition}" as="employee" key="array_index">
+    <div id="member{array_index}" class="d-flex flex-column align-items-center member member-team-{array_index} col-sm-12 col-md-5"
+    style="max-width: 100%;overflow: hidden;">
+        <f:render partial="Employee/ListItemMain" arguments="{employee:employee}"/>
+    </div>
+
+    <div class="member-popup" id="popup-member{array_index}-mobile">
+        <f:render partial="Employee/Popup" arguments="{employee:employee}"/>
+    </div>
+</f:for>
+    <f:if condition="{position.name} == 'Former Member' || {position.name} == 'Former Member - Student' ||
+    {position.name} == 'Ehemaliges Mitglied' || {position.name} == 'Ehemaliges Mitglied - Student'">
+        <f:then>
+            </div>
+        </f:then>
+    </f:if>
+</f:groupedFor>
+

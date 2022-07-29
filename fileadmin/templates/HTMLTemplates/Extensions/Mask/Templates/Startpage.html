@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<header class="big-banner position-relative"
+        style="background: url(<f:for each="{data.image}" as="img_data">{f:uri.image(src:img_data.uid, treatIdAsReference:1)}</f:for>) center center no-repeat;
+        background-size: cover; background-attachment: fixed;">
+
+    <div class="overlay w-100 h-100 position-absolute" style="background: linear-gradient(rgba(47, 48, 67, 0.5), rgba(47, 48, 67, 0.5))">
+    </div>
+
+    <div class="big-banner-text" style="z-index: 1;">
+        <f:if condition="{data.tx_mask_startpageheader}">
+            <h1>{data.tx_mask_startpageheader}</h1>
+        </f:if>
+    </div>
+    <div class="big-banner-text" style="z-index: 1;">
+        <f:if condition="{data.tx_mask_startpagesubheader1}">
+            <p>{data.tx_mask_startpagesubheader1}</p>
+        </f:if>
+    </div>
+    <div class="big-banner-text" style="z-index: 1;">
+        <f:if condition="{data.tx_mask_startpagesubheader2}">
+            <p>{data.tx_mask_startpagesubheader2}</p>
+        </f:if>
+    </div>
+    <div class="big-banner-text" style="z-index: 1;">
+        <f:if condition="{data.tx_mask_startpagesubheader3}">
+            <p>{data.tx_mask_startpagesubheader3}</p>
+        </f:if>
+    </div>
+</header>
+
+<!--
+
+<main>
+    <section class="flex-center container">
+        <f:if condition="{data.tx_mask_mainfirstheader}">
+            <h2>{data.tx_mask_mainfirstheader}</h2>
+        </f:if>
+        <f:if condition="{data.tx_mask_mainfirstheadertext}">
+            <p><f:format.nl2br>{data.tx_mask_mainfirstheadertext}</f:format.nl2br></p>
+        </f:if>
+    </section>
+
+    <section>
+        <div class="flex-center container">
+            <p>Insert stuff here</p>
+            <button type="button" class="btn btn-view-more" aria-label="Right Align">
+                view more<i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="small-banner"
+             style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fileadmin/templates/img/stocknews.jpg')">
+            <div class="small-banner-text">
+                <h1>Projects</h1>
+            </div>
+        </div>
+        <div class="flex-center container">
+            <p>Insert stuff here</p>
+            <button type="button" class="btn btn-view-more" aria-label="Right Align">
+                view more<i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="small-banner"
+             style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fileadmin/templates/img/stocknews.jpg')">
+            <div class="small-banner-text">
+                <h1>The Team</h1>
+            </div>
+        </div>
+        <div class="flex-center container">
+            <p>Insert stuff here</p>
+            <button type="button" class="btn btn-view-more" aria-label="Right Align">
+                view more<i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+</main> -->
+
+

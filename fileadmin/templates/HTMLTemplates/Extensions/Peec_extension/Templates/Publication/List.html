@@ -1,0 +1,157 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="content">
+    <div class="container">
+        <section>
+            <div class="filter">
+                <div class="input-group">
+                    <select class="custom-select" id="pub_filter_type" onchange="window.location=this.value">
+                        <f:if condition="{filter.type} == ''">
+                            <f:then>
+                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {type:''}}", addQueryString:"GET" )}'>
+                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.alltypes"/>
+                                </option>
+                            </f:then>
+                            <f:else>
+                                <option value='{f:uri.action(action:"list", arguments:"{demands: {type:''}}", addQueryString:"GET" )}'>
+                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.alltypes"/>
+                                </option>
+                            </f:else>
+                        </f:if>
+
+                        <f:for each="{types}" as="type">
+                            <li>
+                                <f:switch expression="{type}">
+
+                                    <f:case value="0">
+                                        <f:if condition="{filter.type} === '0'">
+                                            <f:then>
+                                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.article"/>
+                                                </option>
+                                            </f:then>
+                                            <f:else>
+                                                <option value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.article"/>
+                                                </option>
+                                            </f:else>
+                                        </f:if>
+                                    </f:case>
+                                    <f:case value="1">
+                                        <f:if condition="{filter.type} == 1">
+                                            <f:then>
+                                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.book"/>
+                                                </option>
+                                            </f:then>
+                                            <f:else>
+                                                <option value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.book"/>
+                                                </option>
+                                            </f:else>
+                                        </f:if>
+                                    </f:case>
+                                    <f:case value="2">
+                                        <f:if condition="{filter.type} == 2">
+                                            <f:then>
+                                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.bookchapter"/>
+                                                </option>
+                                            </f:then>
+                                            <f:else>
+                                                <option value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.bookchapter"/>
+                                                </option>
+                                            </f:else>
+                                        </f:if>
+                                    </f:case>
+                                    <f:case value="3">
+                                        <f:if condition="{filter.type} == 3">
+                                            <f:then>
+                                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.conferencepaper"/>
+                                                </option>
+                                            </f:then>
+                                            <f:else>
+                                                <option value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.conferencepaper"/>
+                                                </option>
+                                            </f:else>
+                                        </f:if>
+                                    </f:case>
+                                    <f:case value="4">
+                                        <f:if condition="{filter.type} == 4">
+                                            <f:then>
+                                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.misc"/>
+                                                </option>
+                                            </f:then>
+                                            <f:else>
+                                                <option value='{f:uri.action(action:"list", arguments:"{demands: {type:type}}", addQueryString:"GET" )}'>
+                                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.misc"/>
+                                                </option>
+                                            </f:else>
+                                        </f:if>
+                                    </f:case>
+                                </f:switch>
+                            </li>
+                        </f:for>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <select class="custom-select" id="pub_filter_author" onchange="window.location=this.value">
+                        <f:if condition="{filter.employee} == 0">
+                            <f:then>
+                                <option selected value='{f:uri.action(action:"list", arguments:"{demands: {employee:0}}", addQueryString:"GET" )}'>
+                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.allauthors"/>
+                                </option>
+                            </f:then>
+                            <f:else>
+                                <option value='{f:uri.action(action:"list", arguments:"{demands: {employee:0}}", addQueryString:"GET" )}'>
+                                    <f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:filter.allauthors"/>
+                                </option>
+                            </f:else>
+                        </f:if>
+
+                        <f:for each="{employees}" as="employee">
+                            <f:if condition="{filter.employee} == {employee.uid}">
+                                <f:then>
+                                    <option selected value='{f:uri.action(action:"list", arguments:"{demands: {employee:employee}}", addQueryString:"GET" )}'>{employee.firstname} {employee.lastname}</option>
+                                </f:then>
+                                <f:else>
+                                    <option value='{f:uri.action(action:"list", arguments:"{demands: {employee:employee}}", addQueryString:"GET" )}'>{employee.firstname} {employee.lastname}</option>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </select>
+                </div>
+
+                <f:render partial="Filter/FromToYear" arguments="{_all}"/>
+            </div>
+        </section>
+ 
+        <section>
+          	<f:variable name="pubYear">0</f:variable>
+            <div class="list-group pub-container">
+              
+              <f:widget.paginate objects="{publications}" as="paginatedPubs" configuration="{itemsPerPage: 10, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 4}">
+    <f:for each="{paginatedPubs}" as="publication">
+                    <f:if condition="{publication}">
+                  		<f:if condition="{pubYear} != {publication.year}">
+                          <f:variable name="pubYear">{publication.year}</f:variable>  
+                          <h4>{pubYear}</h4>
+                      	</f:if>
+                        <f:render partial="Publication/ListItem" arguments="{publication: publication, showAll:1}"/>
+                    </f:if>
+                </f:for>
+</f:widget.paginate>
+              
+              
+               
+            </div>
+        </section>
+    </div>
+</f:section>

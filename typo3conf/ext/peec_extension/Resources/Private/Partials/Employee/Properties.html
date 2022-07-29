@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-peec-extension" >
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.firstname" />
+		</td>
+		<td>
+		{employee.firstname}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.lastname" />
+		</td>
+		<td>
+		{employee.lastname}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.academictitle" />
+		</td>
+		<td>
+		{employee.academictitle}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.postacademictitle" />
+		</td>
+		<td>
+		{employee.postacademictitle}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.email" />
+		</td>
+		<td>
+		{employee.email}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.phonenumber" />
+		</td>
+		<td>
+		{employee.phonenumber}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_employee.picture" />
+		</td>
+		<td>
+				<f:image src="{employee.picture.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+</table>
+</html>

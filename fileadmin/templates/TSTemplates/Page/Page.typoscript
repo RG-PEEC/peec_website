@@ -1,0 +1,112 @@
+#override template path for ce (content element)
+lib.contentElement.templateRootPaths.10 = {$path.fluidStyledContent}/Templates/
+lib.contentElement.partialRootPaths.10 = {$path.fluidStyledContent}/Partials/
+lib.contentElement.layoutRootPaths.10 = {$path.fluidStyledContent}/Layouts/
+################################################
+
+page >
+#frontend debug messages
+page.config.contentObjectExceptionHandler = 0
+page = PAGE
+
+lib.content.col0 = CONTENT
+lib.content.col0 {
+    table = tt_content
+    select {
+        languageField = sys_language_uid
+        where = colPos=0
+        orderBy = sorting
+    }
+}
+
+#jquery
+#page.includeJSFooterlibs {
+    #jquery = https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+    #jquery.external = 1
+    #jquery.forceOnTop = 1
+#}
+
+#content from column 1
+lib.content.col1 < lib.content.col0
+lib.content.col1.select.where = colPos=1
+
+#content from column 2
+lib.content.col2 < lib.content.col0
+lib.content.col2.select.where = colPos=2
+
+lib.content.col3 < lib.content.col0
+lib.content.col3.select.where = colPos=3
+
+lib.content.col4 < lib.content.col0
+lib.content.col4.select.where = colPos=4
+
+lib.content.col5 < lib.content.col0
+lib.content.col5.select.where = colPos=5
+
+lib.content.col6 < lib.content.col0
+lib.content.col6.select.where = colPos=6
+
+lib.content.col7 < lib.content.col0
+lib.content.col7.select.where = colPos=7
+
+lib.content.col8 < lib.content.col0
+lib.content.col8.select.where = colPos=8
+
+lib.content.col9 < lib.content.col0
+lib.content.col9.select.where = colPos=9
+
+lib.content.col10 < lib.content.col0
+lib.content.col10.select.where = colPos=10
+
+lib.content.col11 < lib.content.col0
+lib.content.col11.select.where = colPos=11
+
+lib.content.col12 < lib.content.col0
+lib.content.col12.select.where = colPos=12
+
+lib.content.col13 < lib.content.col0
+lib.content.col13.select.where = colPos=13
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    #standardtemplate
+    file = {$path.templateMain}
+    partialRootPath = {$path.partials}
+    layoutRootPath = {$path.layouts}
+
+    #menu dataprocessor übergabe
+    #top + breadcrumbs + folder
+    dataProcessing {
+        10 < menu.top
+        #20 < menu.breadcrumbs
+        #30 < menu.folder
+        40 < lang.switch
+    }
+}
+
+#TSFE (TyposcriptFrontEnd)
+[globalVar = TSFE:id=8]
+   page.10.file = {$path.templatePartners}
+[global]
+
+[globalVar = TSFE:id=5]
+    page.10.file = {$path.templateNews}
+[global]
+
+[globalVar = TSFE:id=6]
+    page.10.file = {$path.templateTeam}
+[global]
+
+[globalVar = TSFE:id=4]
+    page.10.file = {$path.templateProjects}
+[global]
+[globalVar = TSFE:id=7]
+    page.10.file = {$path.templatePublications}
+[global]
+
+##meta settings
+page.meta {
+    viewport = width=device-width, init-scale=1, user-scalable=no
+}
+
+page.shortcutIcon = fileadmin/templates/img/peec.png

@@ -1,0 +1,36 @@
+plugin.tx_news {
+    view {
+        templateRootPaths {
+            1000 = fileadmin/templates/HTMLTemplates/Extensions/news/Resources/Private/Templates
+        }
+        partialRootPaths {
+            1000 = fileadmin/templates/HTMLTemplates/Extensions/news/Resources/Private/Partials
+        }
+        layoutRootPaths {
+            1000 = fileadmin/templates/HTMLTemplates/Extensions/news/Resources/Private/Layouts
+        }
+    }
+
+    settings {
+        cropMaxCharacters = 300
+        list.paginate {
+            itemsPerPage = 4
+            insertAbove = 0
+        }
+
+        list {
+            media {
+                image {
+                    maxWidth = 300
+                }
+            }
+        }
+    }
+    _LOCAL_LANG {
+        de {
+            more-link = weiterlesen
+            back-link = zurück zur Übersicht
+            dateFormat = %d.%m.%Y
+        }
+    }
+}

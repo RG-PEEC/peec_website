@@ -1,0 +1,102 @@
+rootPageId: 1
+base: 'https://peec.fh-hagenberg.at/'
+baseVariants: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: EN
+    hreflang: en-US
+    direction: ltr
+    flag: en-us-gb
+  -
+    title: German
+    enabled: true
+    languageId: '1'
+    base: /de/
+    typo3Language: de
+    locale: de_DE
+    iso-639-1: de
+    navigationTitle: DE
+    hreflang: de-DE
+    direction: ltr
+    fallbackType: strict
+    fallbacks: ''
+    flag: de
+errorHandling: {  }
+routes: {  }
+routeEnhancers:
+  News:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    routes:
+      - routePath: '/'
+        _controller: 'News::list'
+      - routePath: '/page-{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      - routePath: '/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+      - routePath: '/{category-name}'
+        _controller: 'News::list'
+        _arguments:
+          category-name: overwriteDemand/categories
+      - routePath: '/{tag-name}'
+        _controller: 'News::list'
+        _arguments:
+          tag-name: overwriteDemand/tags
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    aspects:
+      news-title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+      category-name:
+        type: PersistedAliasMapper
+        tableName: sys_category
+        routeFieldName: slug
+      tag-name:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_tag
+        routeFieldName: slug
+  Project:
+    type: Extbase
+    extension: PeecExtension
+    plugin: Peecfe
+    routes:
+      - routePath: '/'
+        _controller: 'Project::list'
+      - routePath: '/page-{page}'
+        _controller: 'Project::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      - routePath: '/{project-title}'
+        _controller: 'Project::show'
+        _arguments:
+          project-title: project
+    defaults:
+      page: '0'
+      aspects:
+        project-title:
+          type: PersistedAliasMapper
+          tableName: tx_peecextension_domain_model_project
+          routeFieldName: uid
+        page:
+          type: StaticRangeMapper
+          start: '1'
+          end: '100'

@@ -1,0 +1,7 @@
+#variable menu.top | PHP Namespaces
+menu.top = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+menu.top {
+    #pagetree als Datenobjekt zur Verfügung stellen
+    levels = 1
+    as = mainnavigation
+}

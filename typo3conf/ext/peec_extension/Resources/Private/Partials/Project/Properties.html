@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-peec-extension" >
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.title" />
+		</td>
+		<td>
+		{project.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.startdate" />
+		</td>
+		<td>
+		{project.startdate -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.enddate" />
+		</td>
+		<td>
+		{project.enddate -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.description" />
+		</td>
+		<td>
+		{project.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.color_code" />
+		</td>
+		<td>
+		{project.colorCode}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.active" />
+		</td>
+		<td>
+		{project.active}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.teaserimage" />
+		</td>
+		<td>
+				<f:image src="{project.teaserimage.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_peecextension_domain_model_project.media" />
+		</td>
+		<td>
+				<f:for each="{project.media}" as="image" >
+					<f:image src="{image.originalResource.publicUrl}" width="200"/>
+				</f:for>
+		</td>
+	</tr>
+</table>
+</html>

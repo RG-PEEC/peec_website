@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:peec_extension/Resources/Private/Language/locallang_db" date="2020-06-23T16:52:46Z" product-name="peec_extension">
+		<header/>
+		<body>
+			<trans-unit id="tx_peecextension_domain_model_employee" resname="tx_peecextension_domain_model_employee">
+				<source>Employee</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.firstname" resname="tx_peecextension_domain_model_employee.firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.lastname" resname="tx_peecextension_domain_model_employee.lastname">
+				<source>Lastname</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.academictitle" resname="tx_peecextension_domain_model_employee.academictitle">
+				<source>Academictitle</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.postacademictitle" resname="tx_peecextension_domain_model_employee.postacademictitle">
+				<source>Postacademictitle</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.email" resname="tx_peecextension_domain_model_employee.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.phonenumber" resname="tx_peecextension_domain_model_employee.phonenumber">
+				<source>Phonenumber</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.picture" resname="tx_peecextension_domain_model_employee.picture">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.position" resname="tx_peecextension_domain_model_employee.position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.education" resname="tx_peecextension_domain_model_employee.education">
+				<source>Education</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_employee.career" resname="tx_peecextension_domain_model_employee.career">
+				<source>Career</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project" resname="tx_peecextension_domain_model_project">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.title" resname="tx_peecextension_domain_model_project.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.startdate" resname="tx_peecextension_domain_model_project.startdate">
+				<source>Startdate</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.enddate" resname="tx_peecextension_domain_model_project.enddate">
+				<source>Enddate</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.description" resname="tx_peecextension_domain_model_project.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.color_code" resname="tx_peecextension_domain_model_project.color_code">
+				<source>Color Code</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.active" resname="tx_peecextension_domain_model_project.active">
+				<source>Active</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.teaserimage" resname="tx_peecextension_domain_model_project.teaserimage">
+				<source>Teaserimage</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.media" resname="tx_peecextension_domain_model_project.media">
+				<source>Media</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.member" resname="tx_peecextension_domain_model_project.member">
+				<source>Member</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.leader" resname="tx_peecextension_domain_model_project.leader">
+				<source>Leader</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.researchpartner" resname="tx_peecextension_domain_model_project.researchpartner">
+				<source>Researchpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.companypartner" resname="tx_peecextension_domain_model_project.companypartner">
+				<source>Companypartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.fundingpartner" resname="tx_peecextension_domain_model_project.fundingpartner">
+				<source>Fundingpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_project.category" resname="tx_peecextension_domain_model_project.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_education" resname="tx_peecextension_domain_model_education">
+				<source>Education</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_education.name" resname="tx_peecextension_domain_model_education.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_education.subject" resname="tx_peecextension_domain_model_education.subject">
+				<source>Subject</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_education.type" resname="tx_peecextension_domain_model_education.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_education.startdate" resname="tx_peecextension_domain_model_education.startdate">
+				<source>Startdate</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_education.enddate" resname="tx_peecextension_domain_model_education.enddate">
+				<source>Enddate</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career" resname="tx_peecextension_domain_model_career">
+				<source>Career</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career.company" resname="tx_peecextension_domain_model_career.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career.place" resname="tx_peecextension_domain_model_career.place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career.position" resname="tx_peecextension_domain_model_career.position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career.jobdescription" resname="tx_peecextension_domain_model_career.jobdescription">
+				<source>Jobdescription</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career.startdate" resname="tx_peecextension_domain_model_career.startdate">
+				<source>Startdate</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_career.enddate" resname="tx_peecextension_domain_model_career.enddate">
+				<source>Enddate</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication" resname="tx_peecextension_domain_model_publication">
+				<source>Publication</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.title" resname="tx_peecextension_domain_model_publication.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.type" resname="tx_peecextension_domain_model_publication.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.pdf" resname="tx_peecextension_domain_model_publication.pdf">
+				<source>Pdf</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.referencelink" resname="tx_peecextension_domain_model_publication.referencelink">
+				<source>Referencelink</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.doi" resname="tx_peecextension_domain_model_publication.doi">
+				<source>Doi</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.journal" resname="tx_peecextension_domain_model_publication.journal">
+				<source>Journal</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.year" resname="tx_peecextension_domain_model_publication.year">
+				<source>Year</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.volume" resname="tx_peecextension_domain_model_publication.volume">
+				<source>Volume</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.number" resname="tx_peecextension_domain_model_publication.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.month" resname="tx_peecextension_domain_model_publication.month">
+				<source>Month</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.note" resname="tx_peecextension_domain_model_publication.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.publisher" resname="tx_peecextension_domain_model_publication.publisher">
+				<source>Publisher</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.address" resname="tx_peecextension_domain_model_publication.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.edition" resname="tx_peecextension_domain_model_publication.edition">
+				<source>Edition</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.isbn" resname="tx_peecextension_domain_model_publication.isbn">
+				<source>Isbn</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.booktitle" resname="tx_peecextension_domain_model_publication.booktitle">
+				<source>Booktitle</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.organization" resname="tx_peecextension_domain_model_publication.organization">
+				<source>Organization</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.series" resname="tx_peecextension_domain_model_publication.series">
+				<source>Series</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.chapter" resname="tx_peecextension_domain_model_publication.chapter">
+				<source>Chapter</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.school" resname="tx_peecextension_domain_model_publication.school">
+				<source>School</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.howpublished" resname="tx_peecextension_domain_model_publication.howpublished">
+				<source>Howpublished</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.editor" resname="tx_peecextension_domain_model_publication.editor">
+				<source>Editor</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.startpage" resname="tx_peecextension_domain_model_publication.startpage">
+				<source>Startpage</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.endingpage" resname="tx_peecextension_domain_model_publication.endingpage">
+				<source>Endingpage</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.citationlable" resname="tx_peecextension_domain_model_publication.citationlable">
+				<source>Citationlable</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_publication.author" resname="tx_peecextension_domain_model_publication.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_fundingpartner" resname="tx_peecextension_domain_model_fundingpartner">
+				<source>Fundingpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_fundingpartner.name" resname="tx_peecextension_domain_model_fundingpartner.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_fundingpartner.abbreviation" resname="tx_peecextension_domain_model_fundingpartner.abbreviation">
+				<source>Abbreviation</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_fundingpartner.website" resname="tx_peecextension_domain_model_fundingpartner.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_fundingpartner.logo" resname="tx_peecextension_domain_model_fundingpartner.logo">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner" resname="tx_peecextension_domain_model_companypartner">
+				<source>Companypartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner.name" resname="tx_peecextension_domain_model_companypartner.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner.abbreviation" resname="tx_peecextension_domain_model_companypartner.abbreviation">
+				<source>Abbreviation</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner.website" resname="tx_peecextension_domain_model_companypartner.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner.logo" resname="tx_peecextension_domain_model_companypartner.logo">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner.display" resname="tx_peecextension_domain_model_companypartner.display">
+				<source>Display on Partnerpage</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_companypartner.participant" resname="tx_peecextension_domain_model_companypartner.participant">
+				<source>Participant</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_position" resname="tx_peecextension_domain_model_position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_position.name" resname="tx_peecextension_domain_model_position.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_category" resname="tx_peecextension_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_category.name" resname="tx_peecextension_domain_model_category.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_category.abbreviation" resname="tx_peecextension_domain_model_category.abbreviation">
+				<source>Abbreviation</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_partner" resname="tx_peecextension_domain_model_partner">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_partner.researchpartner" resname="tx_peecextension_domain_model_partner.researchpartner">
+				<source>Researchpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_partner.companypartner" resname="tx_peecextension_domain_model_partner.companypartner">
+				<source>Companypartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_participant" resname="tx_peecextension_domain_model_participant">
+				<source>Participant</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_participant.firstname" resname="tx_peecextension_domain_model_participant.firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_participant.lastname" resname="tx_peecextension_domain_model_participant.lastname">
+				<source>Lastname</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner" resname="tx_peecextension_domain_model_researchpartner">
+				<source>Researchpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner.name" resname="tx_peecextension_domain_model_researchpartner.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner.abbreviation" resname="tx_peecextension_domain_model_researchpartner.abbreviation">
+				<source>Abbreviation</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner.website" resname="tx_peecextension_domain_model_researchpartner.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner.logo" resname="tx_peecextension_domain_model_researchpartner.logo">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner.display" resname="tx_peecextension_domain_model_researchpartner.display">
+				<source>Display on Partnerpage</source>
+			</trans-unit>
+			<trans-unit id="tx_peecextension_domain_model_researchpartner.participant" resname="tx_peecextension_domain_model_researchpartner.participant">
+				<source>Participant</source>
+			</trans-unit>
+			<trans-unit id="tx_peec_extension_peecfe.name" resname="tx_peec_extension_peecfe.name">
+				<source>Peecfe</source>
+			</trans-unit>
+			<trans-unit id="tx_peec_extension_peecfe.description" resname="tx_peec_extension_peecfe.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,391 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:variable name="className"></f:variable>
+<f:if condition="{showAll}">
+    <f:then>
+        <f:variable name="className">publication</f:variable>
+    </f:then>
+    <f:else>
+        <f:variable name="className">publication-large</f:variable>
+    </f:else>
+</f:if>
+
+<f:switch expression="{publication.type}">
+    <f:case value="0">
+        <div class="article {className} list-group-item list-group-item-action">
+            <f:render section="journalarticle" arguments="{_all}"/>
+        </div>
+    </f:case>
+    <f:case value="1">
+        <div class="book {className} list-group-item list-group-item-action">
+            <f:render section="book" arguments="{_all}"/>
+        </div>
+    </f:case>
+    <f:case value="2">
+        <div class="incollection {className} list-group-item list-group-item-action">
+            <f:render section="bookchapter" arguments="{_all}"/>
+        </div>
+    </f:case>
+    <f:case value="3">
+        <div class="inproceeding {className} list-group-item list-group-item-action">
+            <f:render section="conferencepaper" arguments="{_all}"/>
+        </div>
+    </f:case>
+    <f:case value="4"><p class="misc">Misc</p></f:case>
+    <f:defaultCase>xxx</f:defaultCase>
+</f:switch>
+
+<f:section name="journalarticle">
+    <f:if condition="{showAll}">
+    <div class="pub-type">
+        <p><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.article"/></p>
+    </div>
+    </f:if>
+    <p class="pub-content">
+        <f:if condition="{publication.authorOutput}">
+            <span class="pub-author">{publication.authorOutput},</span>
+        </f:if>
+
+        <f:if condition="{publication.title}">
+            <span class="pub-title">"{publication.title}",</span>
+        </f:if>
+
+        <f:if condition="{publication.journal}">
+            <span class="pub-journal">{publication.journal},</span>
+        </f:if>
+
+        <f:if condition="{publication.volume}">
+            <span class="pub-volume">vol. {publication.volume},</span>
+        </f:if>
+
+        <f:if condition="{publication.number}">
+            <span class="pub-number">no. {publication.number},</span>
+        </f:if>
+
+        <f:if condition="{publication.startpage}">
+            <span class="pub-pages">pp. {publication.startpage}<f:if condition="{publication.endingpage}">-{publication.endingpage}</f:if>,</span>
+        </f:if>
+
+        <f:if condition="{publication.month}">
+            <span class="pub-month">{publication.month}.</span>
+        </f:if>
+
+        <f:if condition="{publication.year}">
+            <f:if condition="{publication.doi}">
+                <f:then>
+                    <span class="pub-year">{publication.year},</span>
+                </f:then>
+                <f:else>
+                    <span class="pub-year">{publication.year}.</span>
+                </f:else>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{publication.doi}">
+            <span class="pub-doi">doi: {publication.doi}.</span>
+        </f:if>
+    </p>
+    <f:if condition="{showAll}">
+        <f:if condition="{publication.pdf}">
+            <div class="pub-pdf">
+                <a href="{publication.pdf.originalResource.publicUrl}" download class="btn btn-pub-pdf" aria-label="Right Align">
+                    <i class="fa fa-file-pdf"></i>PDF</a>
+            </div>
+        </f:if>
+        <f:if condition="{publication.referencelink}">
+            <div class="pub-reference">
+                <a href="{publication.referencelink}" target="_blank" class="btn btn-pub-reference" aria-label="Right Align">
+                    <i class="fa fa-external-link-alt"></i><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.reference"/></a>
+            </div>
+        </f:if>
+        <div class="pub-bibtex">
+            <button type="button" class="btn btn-pub-bibtex" data-toggle="modal" data-target="#bibtex_modal_{publication.uid}">
+                <i class="fa fa-quote-left"></i>BibTeX
+            </button>
+        </div>
+
+        <f:render partial="Publication/BibTexModal" arguments="{publication:publication}"/>
+    </f:if>
+</f:section>
+
+<f:section name="book">
+    <f:if condition="{showAll}">
+    <div class="pub-type">
+        <p><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.book"/></p>
+    </div>
+    </f:if>
+    <p class="pub-content">
+        <f:if condition="{publication.authorOutput}">
+            <span class="pub-author">{publication.authorOutput},</span>
+        </f:if>
+
+        <f:if condition="{publication.title}">
+            <span class="pub-title">"{publication.title}",</span>
+        </f:if>
+
+        <f:if condition="{publication.volume}">
+            <span class="pub-volume">vol. {publication.volume},</span>
+        </f:if>
+
+        <f:if condition="{publication.edition}">
+            <f:switch expression="{publication.edition}">
+                <f:case value="1"></f:case>
+                <f:case value="2"><span class="pub-edition">{publication.edition}nd ed.</span></f:case>
+                <f:case value="3"><span class="pub-edition">{publication.edition}rd ed.</span></f:case>
+                <f:defaultCase>
+                    <f:if condition="{publication.edition}">
+                        <span class="pub-edition">{publication.edition}th ed.</span>
+                    </f:if>
+                </f:defaultCase>
+            </f:switch>
+        </f:if>
+
+        <f:if condition="{publication.address}">
+            <span class="pub-address">{publication.address},</span>
+        </f:if>
+
+        <f:if condition="{publication.publisher}">
+            <span class="pub-publisher">{publication.publisher},</span>
+        </f:if>
+
+        <f:if condition="{publication.year}">
+            <f:if condition="{publication.doi}">
+                <f:then>
+                    <span class="pub-year">{publication.year},</span>
+                </f:then>
+                <f:else>
+                    <span class="pub-year">{publication.year}.</span>
+                </f:else>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{publication.doi}">
+            <span class="pub-doi">doi: {publication.doi}.</span>
+        </f:if>
+    </p>
+    <f:if condition="{showAll}">
+    <f:if condition="{publication.pdf}">
+        <div class="pub-pdf">
+            <a href="{publication.pdf.originalResource.publicUrl}" download class="btn btn-pub-pdf" aria-label="Right Align">
+                <i class="fa fa-file-pdf"></i>PDF</a>
+        </div>
+    </f:if>
+    <f:if condition="{publication.referencelink}">
+        <div class="pub-reference">
+            <a href="{publication.referencelink}" target="_blank" class="btn btn-pub-reference" aria-label="Right Align">
+                <i class="fa fa-external-link-alt"></i><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.reference"/></a>
+        </div>
+    </f:if>
+    <div class="pub-bibtex">
+        <button type="button" class="btn btn-pub-bibtex" data-toggle="modal" data-target="#bibtex_modal_{publication.uid}">
+            <i class="fa fa-quote-left"></i>BibTeX
+        </button>
+    </div>
+
+    <f:render partial="Publication/BibTexModal" arguments="{publication:publication}"/>
+    </f:if>
+</f:section>
+
+<f:section name="bookchapter">
+    <f:if condition="{showAll}">
+    <div class="pub-type">
+        <p><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.bookchapter"/></p>
+    </div>
+    </f:if>
+    <p class="pub-content">
+        <f:if condition="{publication.authorOutput}">
+            <span class="pub-author">{publication.authorOutput},</span>
+        </f:if>
+
+        <f:if condition="{publication.title}">
+            <span class="pub-chapter">"{publication.title}",</span>
+        </f:if>
+
+        <f:if condition="{publication.title}">
+            <span class="pub-title">in {publication.booktitle},</span>
+        </f:if>
+
+        <f:if condition="{publication.edition}">
+            <f:switch expression="{publication.edition}">
+                <f:case value="1"><span class="pub-edition">{publication.edition}st ed.</span></f:case>
+                <f:case value="2"><span class="pub-edition">{publication.edition}nd ed.</span></f:case>
+                <f:case value="3"><span class="pub-edition">{publication.edition}rd ed.</span></f:case>
+                <f:defaultCase><span class="pub-edition">{publication.edition}th ed.</span></f:defaultCase>
+            </f:switch>
+        </f:if>
+
+        <f:if condition="{publication.editorString}">
+                <span class="pub-address">{publication.editorString}</span>
+        </f:if>
+
+        <f:if condition="{publication.address}">
+            <span class="pub-address">{publication.address},</span>
+        </f:if>
+
+        <f:if condition="{publication.publisher}">
+            <span class="pub-publisher">{publication.publisher},</span>
+        </f:if>
+
+        <f:if condition="{publication.year}">
+            <span class="pub-year">{publication.year},</span>
+        </f:if>
+
+        <f:if condition="{publication.startpage}">
+            <f:if condition="{publication.doi}">
+                <f:then>
+                    <span class="pub-pages">{publication.startpage}<f:if condition="{publication.endingpage}">-{publication.endingpage}</f:if>,</span>
+                </f:then>
+                <f:else>
+                    <span class="pub-pages">{publication.startpage}<f:if condition="{publication.endingpage}">-{publication.endingpage}</f:if>.</span>
+                </f:else>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{publication.doi}">
+            <span class="pub-doi">doi: {publication.doi}.</span>
+        </f:if>
+    </p>
+    <f:if condition="{showAll}">
+    <f:if condition="{publication.pdf}">
+        <div class="pub-pdf">
+            <a href="{publication.pdf.originalResource.publicUrl}" download class="btn btn-pub-pdf" aria-label="Right Align">
+                <i class="fa fa-file-pdf"></i>PDF</a>
+        </div>
+    </f:if>
+    <f:if condition="{publication.referencelink}">
+        <div class="pub-reference">
+            <a href="{publication.referencelink}" target="_blank" class="btn btn-pub-reference" aria-label="Right Align">
+                <i class="fa fa-external-link-alt"></i><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.reference"/></a>
+        </div>
+    </f:if>
+    <div class="pub-bibtex">
+        <button type="button" class="btn btn-pub-bibtex" data-toggle="modal" data-target="#bibtex_modal_{publication.uid}">
+            <i class="fa fa-quote-left"></i>BibTeX
+        </button>
+    </div>
+
+    <f:render partial="Publication/BibTexModal" arguments="{publication:publication}"/>
+    </f:if>
+</f:section>
+
+<f:section name="conferencepaper">
+    <f:if condition="{showAll}">
+        <div class="pub-type">
+            <p><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.conferencepaper"/></p>
+        </div>
+    </f:if>
+    <p class="pub-content">
+        <f:if condition="{publication.authorOutput}">
+            <span class="pub-author">{publication.authorOutput},</span>
+        </f:if>
+
+        <f:if condition="{publication.title}">
+            <span class="pub-title">"{publication.title}",</span>
+        </f:if>
+
+        <f:if condition="{publication.booktitle}">
+            <f:then>
+                <span class="pub-booktitle">in {publication.booktitle},</span>
+            </f:then>
+        </f:if>
+
+        <f:if condition="{publication.address}">
+            <span class="pub-address">{publication.address},</span>
+        </f:if>
+
+        <f:if condition="{publication.month}">
+            <span class="pub-month">{publication.month},</span>
+        </f:if>
+
+        <f:if condition="{publication.year}">
+            <span class="pub-year">{publication.year},</span>
+        </f:if>
+
+        <f:if condition="{publication.startpage}">
+            <span class="pub-pages">pp. {publication.startpage}<f:if condition="{publication.endingpage}">-{publication.endingpage}</f:if>.</span>
+        </f:if>
+    </p>
+    <f:if condition="{showAll}">
+        <f:if condition="{publication.pdf}">
+            <div class="pub-pdf">
+                <a href="{publication.pdf.originalResource.publicUrl}" download class="btn btn-pub-pdf" aria-label="Right Align">
+                    <i class="fa fa-file-pdf"></i>PDF</a>
+            </div>
+        </f:if>
+        <f:if condition="{publication.referencelink}">
+            <div class="pub-reference">
+                <a href="{publication.referencelink}" target="_blank" class="btn btn-pub-reference" aria-label="Right Align">
+                    <i class="fa fa-external-link-alt"></i><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.reference"/></a>
+            </div>
+        </f:if>
+        <div class="pub-bibtex">
+            <button type="button" class="btn btn-pub-bibtex" data-toggle="modal" data-target="#bibtex_modal_{publication.uid}">
+                <i class="fa fa-quote-left"></i>BibTeX
+            </button>
+        </div>
+
+        <f:render partial="Publication/BibTexModal" arguments="{publication:publication}"/>
+    </f:if>
+</f:section>
+
+<f:section name="misc">
+    <div class="pub-type">
+        <p><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.misc"/></p>
+    </div>
+    <p class="pub-content">
+        <span class="pub-author">
+            {publication.authorOutput}
+        </span>
+
+        <f:if condition="{publication.title}">
+            <span class="pub-title">"{publication.title}",</span>
+        </f:if>
+
+        <f:if condition="{publication.howpublished}">
+            <span class="pub-howpublished">{publication.howpublished},</span>
+        </f:if>
+
+        <f:if condition="{publication.month}">
+            <span class="pub-month">{publication.month},</span>
+        </f:if>
+
+        <f:if condition="{publication.year}">
+            <f:if condition="{publication.doi}">
+                <f:then>
+                    <span class="pub-year">{publication.year},</span>
+                </f:then>
+                <f:else>
+                    <span class="pub-year">{publication.year},</span>
+                </f:else>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{publication.doi}">
+            <span class="pub-doi">doi: {publication.doi}.</span>
+        </f:if>
+    </p>
+
+    <f:if condition="{publication.pdf}">
+        <div class="pub-pdf">
+            <a href="{publication.pdf.originalResource.publicUrl}" download class="btn btn-pub-pdf" aria-label="Right Align">
+                <i class="fa fa-file-pdf"></i>PDF</a>
+        </div>
+    </f:if>
+    <f:if condition="{publication.referencelink}">
+        <div class="pub-reference">
+            <a href="{publication.referencelink}" target="_blank" class="btn btn-pub-reference" aria-label="Right Align">
+                <i class="fa fa-external-link-alt"></i><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:Publication.reference"/></a>
+        </div>
+    </f:if>
+    <div class="pub-bibtex">
+        <button type="button" class="btn btn-pub-bibtex" data-toggle="modal" data-target="#bibtex_modal_{publication.uid}">
+            <i class="fa fa-quote-left"></i>BibTeX
+        </button>
+    </div>
+
+    <f:render partial="Publication/BibTexModal" arguments="{publication:publication}"/>
+</f:section>
+
+
+
+

@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <div class="col-lg-6 container">
+        <div class="row">
+            <div class="col"><h2><f:translate key="LLL:fileadmin/templates/HTMLTemplates/Extensions/locallang.xlf:companypartners"/></h2></div>
+        </div>
+
+        <div class="row">
+            <f:for each="{companypartners}" as="partner">
+                <div class="col-md-6 card-container company-partner">
+                    <div class="card-flip">
+                        <div class="card front">
+                            <f:media class="card-img img-fluid" file="{partner.logo}"/>
+                        </div>
+
+                        <div class="card back">
+                            <div class="card-header">
+                                {partner.name}
+                            </div>
+                            <f:if condition="{partner.participant}">
+                                <div class="card-block">
+                                    {partner.participant}
+                                </div>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>
+

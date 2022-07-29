@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+
+<f:if condition="{settings.cssFile}">
+	<n:includeFile path="{settings.cssFile}" />
+</f:if>
+
+<f:if condition="{settings.templateLayout}==20">
+	<f:then>
+		<main class="container news">
+	</f:then>
+	<f:else>
+		<main class="news">
+	</f:else>
+</f:if>
+
+<f:render section="content" />
+
+</html>
+
